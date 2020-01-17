@@ -1,30 +1,25 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Jean Forteroche Blog'; ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<p>Derniers billets du blog :</p>
 
+<h1>Jean Forteroche</h1>
+<p>Derniers chapitres sorties :</p>
 
-<?php
-while ($data = $posts->fetch())
-{
-?>
+<?php for ($i = 0; $i < count($posts); $i++): ?>
     <div class="news">
         <h3>
-            <?= htmlspecialchars($data['title']) ?>
-            <em>le <?= $data['creation_date_fr'] ?></em>
+            <?= htmlspecialchars($posts[$i]['title']) ?>
+            <em>le <?= $posts[$i]['creation_date_fr'] ?></em>
         </h3>
         
         <p>
-            <?= nl2br(htmlspecialchars($data['content'])) ?>
+            <?= nl2br(htmlspecialchars($posts[$i]['content'])) ?>
             <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+            <em><a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>">Lire ce chapitre</a></em>
         </p>
     </div>
-<?php
-}
-$posts->closeCursor();
-?>
+<?php endfor; ?>
+
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require 'template.php'; ?>

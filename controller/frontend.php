@@ -6,10 +6,10 @@ require_once('model/CommentManager.php');
 
 function listPosts()
 {
-    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-    $posts = $postManager->getPosts();
-
-    require('view/frontend/listPostsView.php');
+    $postManager = new \OpenClassrooms\Blog\Model\PostManager(); //créée un objet du modele
+    $posts = $postManager->getPosts();                           //appelle une fonction de l'objet
+  
+    require('view/frontend/listPostsView.php');                 
 }
 
 function post()

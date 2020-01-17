@@ -1,7 +1,7 @@
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
+<h1>Chapitres</h1>
 <p><a href="index.php">Retour à la liste des billets</a></p>
 
 <div class="news">
@@ -15,21 +15,22 @@
     </p>
 </div>
 
-<h2>Commentaires</h2>
+<h2>Qu'avez-vous pensez de ce chapitre ?</h2>
 
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
-        <label for="author">Auteur</label><br />
+        <label for="author">Votre nom</label><br />
         <input type="text" id="author" name="author" />
     </div>
     <div>
-        <label for="comment">Commentaire</label><br />
+        <label for="comment">Votre commentaire</label><br />
         <textarea id="comment" name="comment"></textarea>
     </div>
     <div>
-        <input type="submit" />
+        <button type="submit" class="btn btn-outline-success">Valider</button>
     </div>
 </form>
+<h3> Autres commentaires </h3>
 
 <?php
 while ($comment = $comments->fetch())
@@ -42,4 +43,4 @@ while ($comment = $comments->fetch())
 ?>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require 'template.php'; ?>
