@@ -5,6 +5,7 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 
 class BackController {
+
     //Affichage de la homepage login
     function login()
     {
