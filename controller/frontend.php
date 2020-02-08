@@ -6,6 +6,16 @@ require_once('model/CommentManager.php');
 
 class FrontController {
 
+    function adminLogin()
+    {
+        require('view/frontend/adminLoginView.php');
+    }
+
+    function contact()
+    {
+        require ('view/frontend/contactView.php');
+    }
+
     function homepage()
     {
         require('view/frontend/homepageView.php'); 

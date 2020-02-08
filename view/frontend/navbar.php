@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Prendre contact</a>
+        <a class="nav-link" href="index.php?action=contact">Prendre contact</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -25,6 +25,9 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="index.php?action=listPosts">Détails des chapitres</a>
         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?action=adminlogin">Connexion</a>
       </li>
     </ul>
   </div>

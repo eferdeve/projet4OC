@@ -43,4 +43,13 @@ h3 {
     background-size: cover;
 }
 
+label {
+    color: grey;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
 

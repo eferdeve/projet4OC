@@ -36,6 +36,7 @@
             <button type="submit" class="btn btn-outline-success">Valider</button>
         </div>
     </form>
+
     <h3> Autres commentaires </h3>
 
     <?php
@@ -44,9 +45,14 @@
     ?>
         <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
         <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+
+            <a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-warning">Signaler</a>
+ 
     <?php
     }
-    ?>
+    
+    ?> 
+
     <?php $content = ob_get_clean(); ?>
 
     <?php require 'template.php'; ?>
