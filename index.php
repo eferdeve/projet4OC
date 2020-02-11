@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require('controller/frontend.php');
 require('controller/backend.php');
@@ -17,7 +18,12 @@ try {
 
         //Affichage du loginhome une fois les logs corrects
         if ($_GET['action'] == 'login') {
+
+            if ($_POST['identifiant'] == "jeanf" && $_POST['mdp'] == "1234") {
             $back->login();
+            } else {
+                header('location:index.php?action=adminlogin');
+            }
         }
 
         //Affichage de la page de connexion administrateur

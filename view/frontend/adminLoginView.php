@@ -1,6 +1,11 @@
 <?php $title = 'Connexion espace membre'; ?>
 <?php ob_start(); ?>
 
+<?php 
+$_POST['identifiant'];
+$_POST['mdp'];
+?>
+
 
 <div id="parallax_image">
     <div class="row h-50">
@@ -10,15 +15,18 @@
 
         <form action="index.php?action=login" method="post">
             <div class="form-group">
-                <label for="email">Adresse Email</label>
-                <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Email">
+                <label for="email">Identifiant</label> 
+                <input type="text" class="form-control" id="identifiant" name="identifiant" aria-describedby="emailHelp" placeholder="Email">
             </div>
+
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="mdp" placeholder="Mot de pass">
+                <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot de pass">
             </div>
-            <button type="submit" class="btn btn-primary">Se connecter</button>
+            <button type="submit" name="valider" class="btn btn-primary">Se connecter</button>
         </form>
+        <?php $erreur = ""; ?>
+
         
       </div>
     </div>
