@@ -62,8 +62,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html"><i class="fas fa-pen-fancy"></i>  Nouveau chapitre</a> 
-            <a class="collapse-item" href="cards.html"><i class="fas fa-user-edit"></i>  Modifier chapitres</a>
+            <a class="collapse-item" href="#"><i class="fas fa-pen-fancy"></i>  Nouveau chapitre</a> 
+            <a class="collapse-item" href="#"><i class="fas fa-user-edit"></i>  Modifier chapitres</a>
           </div>
         </div>
       </li>
@@ -76,7 +76,7 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="tables.html">Liste des commentaires</a>
+            <a class="collapse-item" href="view/backend/sbadmin2/tables.html">Liste des commentaires</a>
             <a class="collapse-item" href="utilities-border.html">Commentaires signalés</a>
           </div>
         </div>
