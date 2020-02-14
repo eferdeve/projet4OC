@@ -11,7 +11,7 @@ class BackController {
     function login()
     {
         $logs = new \OpenClassrooms\Blog\Model\login();
-        require('view/backend/sbadmin2/index.php');
+        require('view/backend/sbadmin2/dashboard.php');
     }
 
     //Effacer un commentaire
