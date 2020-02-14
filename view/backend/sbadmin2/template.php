@@ -76,7 +76,7 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="view/backend/sbadmin2/tables.php">Liste des commentaires</a>
+            <a class="collapse-item" href="../index.php?action=tables">Liste des commentaires</a>
             <a class="collapse-item" href="utilities-border.html">Commentaires signalés</a>
           </div>
         </div>

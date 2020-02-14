@@ -11,6 +11,11 @@ $back = new BackController();
 try {
     if (isset($_GET['action'])) {
 
+        //Affichage page liste des commentaire ( Tables )
+        if ($_GET['action'] == 'tables') {
+            $back->tables();
+        }
+
         //Suppression d'un commentaire
         if ($_GET['action'] == 'comdelet') {
             $back->deleteComment();

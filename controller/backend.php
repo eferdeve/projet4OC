@@ -7,6 +7,12 @@ require_once('model/login.php');
 
 class BackController {
 
+    //Affichage page Tables 
+    function tables()
+    {
+        require('view/backend/sbadmin2/tables.php');
+    }
+
     //Affichage de la homepage login
     function login()
     {
