@@ -6,10 +6,24 @@ require_once("model/Manager.php");
 
 class Login extends Manager {
 
-    private function log() {
+    public function log($identifiant, $motdepass) {
         $db = $this->dbConnect();
-        $identifiant = $db->query('SELECT pseudo FROM membres');
-        $motdepass = $db->query('SELECT motdepass FROM membres');
+        $req = $db->prepare('SELECT *  FROM membres WHERE pseudo = ?');
+        $req->execute(array($identifiant));
+        $user = $req->fetch();
+        //return $user;
+
+        if (!$user) {
+            return false;
+        } else {
+            if ($motdepass == $user['motdepass']) {
+                session_start();
+                $_SESSION['admin'] = $user['id'];
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
 }

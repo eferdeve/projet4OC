@@ -16,8 +16,13 @@ class BackController {
     //Affichage de la homepage login
     function login()
     {
-        $logs = new \OpenClassrooms\Blog\Model\login();
-        require('view/backend/sbadmin2/dashboard.php');
+        $logs = new \OpenClassrooms\Blog\Model\Login();
+        $admin = $logs->log($_POST['identifiant'], $_POST['mdp']);
+        if (!$admin) {
+            require('view/frontend/adminloginView.php');
+        } else {
+            require('view/backend/sbadmin2/dashboard.php');
+        }
     }
 
     //Effacer un commentaire

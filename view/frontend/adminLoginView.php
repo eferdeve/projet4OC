@@ -1,11 +1,6 @@
 <?php $title = 'Connexion espace membre'; ?>
 <?php ob_start(); ?>
 
-<?php 
-$_POST['identifiant'];
-$_POST['mdp'];
-?>
-
 
 <div id="parallax_image">
     <div class="row h-50">
@@ -25,9 +20,6 @@ $_POST['mdp'];
             </div>
             <button type="submit" name="valider" class="btn btn-primary">Se connecter</button>
         </form>
-        <?php $erreur = ""; ?>
-
-        
       </div>
     </div>
   </div>
