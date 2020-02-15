@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="dashboard.php">
+        <a class="nav-link" href="index.php?action=login">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span><title>Dashboard</title></span></a>
       </li>
@@ -76,7 +76,7 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="../index.php?action=tables">Liste des commentaires</a>
+            <a class="collapse-item" href="./index.php?action=tables">Liste des commentaires</a>
             <a class="collapse-item" href="utilities-border.html">Commentaires signalés</a>
           </div>
         </div>
