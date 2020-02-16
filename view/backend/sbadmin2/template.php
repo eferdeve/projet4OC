@@ -43,7 +43,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php?action=login">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span><title>Dashboard</title></span></a>
+          <span>Tableau de bord</span></a>
       </li>
 
       <!-- Divider -->

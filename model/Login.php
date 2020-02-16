@@ -18,7 +18,7 @@ class Login extends Manager {
         } else {
             if ($motdepass == $user['motdepass']) {
                 session_start();
-                $_SESSION['admin'] = $user['id'];
+                $_SESSION['admin'] = $user['pseudo'];
                 return true;
             } else {
                 return false;

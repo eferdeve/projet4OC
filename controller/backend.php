@@ -21,7 +21,7 @@ class BackController {
         if (!$admin) {
             require('view/frontend/adminloginView.php');
         } else {
-            require('view/backend/sbadmin2/dashboard.php');
+            require('view/backend/sbadmin2/dashboard.php'); //faire une fonction juste pour afficher le dashbaord, puis appeler celle-ci ici.
         }
     }
 
