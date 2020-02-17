@@ -23,9 +23,7 @@ try {
 
         //Affichage du loginhome une fois les logs corrects
         if ($_GET['action'] == 'login') {
-            if ($_SESSION['admin']) {
                 $back->login();
-            }
         }
 
         //Affichage de la page de connexion administrateur
