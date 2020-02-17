@@ -11,6 +11,22 @@ $back = new BackController();
 try {
     if (isset($_GET['action'])) {
 
+        //Affichage page nouveau chapitre
+        if ($_GET['action'] == 'newpost') {
+            $back->newPost();
+        }
+
+        //Déconnexion et destruction de la session en cours
+        if ($_GET['action'] == 'logout') {
+            $back->logout();
+            header('index.php?action=adminlogin');
+        }
+
+        ////Affichage homepage quand on session active (lien dashboard du template backend)
+        if ($_GET['action'] == 'sessionActive') {
+            $back->adminHomepage();
+        }
+
         //Affichage page liste des commentaire ( Tables )
         if ($_GET['action'] == 'tables') {
             $back->tables();

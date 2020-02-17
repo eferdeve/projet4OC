@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
 
   <title><?= $title ?></title>
 
@@ -29,7 +31,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?action=sessionActive">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-book-open"></i>
         </div>
@@ -41,7 +43,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.php?action=login">
+        <a class="nav-link" href="index.php?action=sessionActive">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Tableau de bord</span></a>
       </li>
@@ -62,7 +64,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#"><i class="fas fa-pen-fancy"></i>  Nouveau chapitre</a> 
+            <a class="collapse-item" href="./index.php?action=newpost"><i class="fas fa-pen-fancy"></i>  Nouveau chapitre</a> 
             <a class="collapse-item" href="#"><i class="fas fa-user-edit"></i>  Modifier chapitres</a>
           </div>
         </div>
@@ -86,33 +88,8 @@
       <hr class="sidebar-divider">
 
       <!-- Heading -->
-      <div class="sidebar-heading">
-        Addons
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
+      
+      
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -288,9 +265,9 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="#" action="index.php?action=logout" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Se déconnecter
                 </a>
               </div>
             </li>
@@ -351,10 +328,10 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Cliquez sur "Se déconnecter" mettra fin à la session et vous déconnectera de votre espace admin.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+          <a class="btn btn-primary" href="index.php?action=logout">Se déconnecter</a>
         </div>
       </div>
     </div>
