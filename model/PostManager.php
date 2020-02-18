@@ -6,6 +6,15 @@ require_once("model/Manager.php");
 
 class PostManager extends Manager
 {
+
+    //Envoie d'un nouveau post
+    public function newPost($title, $content, $creation_date)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare("INSERT INTO posts(`title`, `content`, `creation_date`) VALUES '$title', '$content', '$creation_date'");
+        $req->execute();
+    }
+
     public function getPosts()
     {
         $db = $this->dbConnect();

@@ -7,6 +7,13 @@ require_once('model/login.php');
 
 class BackController {
 
+    //Envoie d'un nouveau post
+    function sendpost()
+    {
+        $post = new \OpenClassrooms\Blog\Model\PostManager();
+        $newpost = $post->newPost();
+    }
+
     //Affichage page Nouveau Post
     function newPost()
     {

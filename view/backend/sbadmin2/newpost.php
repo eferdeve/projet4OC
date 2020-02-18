@@ -13,8 +13,9 @@
 </script>
 
 <h1>Nouveau chapitre</h1>
-<form method="post">
-    <textarea id="mytextarea">Hello, World!</textarea>
+<form action="index.php?action=sendpost" method="post">
+    <textarea name ="mytextarea" id="mytextarea">Hello, World!</textarea>
+    <button type="submit" >Envoyez</button>
 </form>
 
 

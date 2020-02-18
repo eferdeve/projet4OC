@@ -11,6 +11,11 @@ $back = new BackController();
 try {
     if (isset($_GET['action'])) {
 
+        //Envoi d'un Post
+        if ($_GET['action'] == 'sendpost') {
+            $back->sendpost();
+        }
+
         //Affichage page nouveau chapitre
         if ($_GET['action'] == 'newpost') {
             $back->newPost();
