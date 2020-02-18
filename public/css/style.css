@@ -52,4 +52,8 @@ form {
     margin: auto;
 }
 
+.tox-statusbar__branding {
+    display: none;
+}
+
 

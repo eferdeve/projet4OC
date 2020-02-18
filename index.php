@@ -13,7 +13,11 @@ try {
 
         //Envoi d'un Post
         if ($_GET['action'] == 'sendpost') {
-            $back->sendpost();
+            if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                $back->sendpost($_POST['title'], $_POST['content']);
+            } else {
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
         }
 
         //Affichage page nouveau chapitre

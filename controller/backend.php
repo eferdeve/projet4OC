@@ -8,10 +8,16 @@ require_once('model/login.php');
 class BackController {
 
     //Envoie d'un nouveau post
-    function sendpost()
+    function sendpost($title, $content, $creation_date)
     {
         $post = new \OpenClassrooms\Blog\Model\PostManager();
-        $newpost = $post->newPost();
+        $reqPost = $post->newPost($title, $content, $creation_date);
+
+        if ($reqPost === false) {
+            throw new Exception('Impossible d\'ajouter du contenu !');
+        } else {
+            header('index.php?action=listPosts');
+        }
     }
 
     //Affichage page Nouveau Post

@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
+  <script src="https://cdn.tiny.cloud/1/o3c2sxpgjnq497a5mc1nl1iydwqt21798wglujodui2g2zsr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  
 
   <title><?= $title ?></title>
 
