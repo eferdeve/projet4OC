@@ -8,15 +8,15 @@ require_once('model/login.php');
 class BackController {
 
     //Envoie d'un nouveau post
-    function sendpost($title, $content, $creation_date)
+    function sendpost($title, $content)
     {
         $post = new \OpenClassrooms\Blog\Model\PostManager();
-        $reqPost = $post->newPost($title, $content, $creation_date);
-
+        $reqPost = $post->newPost($title, $content);
         if ($reqPost === false) {
-            throw new Exception('Impossible d\'ajouter du contenu !');
-        } else {
-            header('index.php?action=listPosts');
+            throw new Exception('Impossible d\'ajouter le billet !');
+        }
+        else {
+            header('Location: index.php?action=newpost');
         }
     }
 
@@ -37,7 +37,7 @@ class BackController {
     function tables()
     {
         $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-        $comments = $commentManager->getComments($_GET['id']);
+        $comments = $commentManager->getAllComments();
         require('view/backend/sbadmin2/tables.php');
     }
 

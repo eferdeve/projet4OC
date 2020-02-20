@@ -15,7 +15,8 @@ try {
         if ($_GET['action'] == 'sendpost') {
             if (!empty($_POST['title']) && !empty($_POST['content'])) {
                 $back->sendpost($_POST['title'], $_POST['content']);
-            } else {
+            }
+            else {
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }
         }

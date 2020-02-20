@@ -22,22 +22,24 @@
                       <th>Pseudo</th>
                       <th>Commentaire</th>
                       <th>Date</th>
-                      <th>Titre du billet</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    
                     <?php
                     while ($comment = $comments->fetch())
                     {
+
                     ?>
+                    <tr>
                       <td><?= htmlspecialchars($comment['author']) ?></td>
                       <td><?= nl2br(htmlspecialchars($comment['comment'])) ?></td>
-                      <td><?= $comment['comment_date_fr'] ?></td>
+                      <td><?= date('H:i:s d/m/Y', strtotime($comment['comment_date'])) ?></td>
+                    </tr>
                       <?php
                       }
                       ?> 
-                    </tr>
+                    
                   </tbody>
                 </table>
               </div>

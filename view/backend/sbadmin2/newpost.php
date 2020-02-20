@@ -20,8 +20,8 @@
     <input type="text" name="title" class="input-group-text" id="inputGroup-sizing-lg"></input>
 
     <h3>Quelle en sera son histoire ?</h3>
-    <textarea name ="content" id="mytextarea">Contenu du chapitre ici</textarea>
-    <button type="submit" >Envoyez</button>
+    <textarea name="content" id="mytextarea">Contenu du chapitre ici</textarea>
+    <button type="submit">Envoyez</button>
 </form>
 
 

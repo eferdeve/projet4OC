@@ -8,13 +8,11 @@ class PostManager extends Manager
 {
 
     //Envoie d'un nouveau post
-    public function newPost($title, $content, $creation_date)
+    public function newPost($title, $content)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare("INSERT INTO posts (title, content, creation_date) VALUES(?, ?, NOW())");
-        $reqPost = $req->execute(array($title, $content, $creation_date));
-
-        return $reqPost;
+        $req = $db->prepare("INSERT INTO posts(title, content, creation_date) VALUES(?, ?, NOW())");
+        $reqPost = $req->execute(array($title, $content));
     }
 
     public function getPosts()
