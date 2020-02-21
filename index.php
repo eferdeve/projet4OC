@@ -32,7 +32,7 @@ try {
             header('index.php?action=adminlogin');
         }
 
-        ////Affichage homepage quand on session active (lien dashboard du template backend)
+        //Affichage homepage quand on session active (lien dashboard du template backend)
         if ($_GET['action'] == 'sessionActive') {
             $back->adminHomepage();
         }
@@ -55,11 +55,6 @@ try {
         //Affichage de la page de connexion administrateur
         if ($_GET['action'] == 'adminlogin') {
             $front->adminLogin();
-        }
-
-        //Affichage de la page contact
-        if ($_GET['action'] == 'contact') {
-            $front->contact();
         }
 
         //Affichage de la liste des chapitres

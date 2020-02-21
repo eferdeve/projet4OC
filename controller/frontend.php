@@ -11,11 +11,6 @@ class FrontController {
         require('view/frontend/adminLoginView.php');
     }
 
-    function contact()
-    {
-        require ('view/frontend/contactView.php');
-    }
-
     function homepage()
     {
         require('view/frontend/homepageView.php'); 
