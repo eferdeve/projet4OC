@@ -6,7 +6,6 @@ require_once("model/Manager.php");
 
 class CommentManager extends Manager
 {
-
     public function getAllComments()
     {
             $db = $this->dbConnect();
@@ -38,5 +37,11 @@ class CommentManager extends Manager
     {
         $db = $this->dbConnect();
         $commentTarget = $db->query("DELETE FROM comments WHERE id=$id");
+    }
+
+    public function warningComment($id)
+    {
+        $db = $this->dbConnect();
+        $commentTarget = $db->query("UPDATE comments SET signalement = 'Oui' WHERE id=$id");
     }
 }

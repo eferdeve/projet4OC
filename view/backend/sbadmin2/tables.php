@@ -22,6 +22,8 @@
                       <th>Pseudo</th>
                       <th>Commentaire</th>
                       <th>Date</th>
+                      <th>Commentaire signalé</th>
+                      <th>Supprimer commentaire ?</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -35,6 +37,8 @@
                       <td><?= htmlspecialchars($comment['author']) ?></td>
                       <td><?= nl2br(htmlspecialchars($comment['comment'])) ?></td>
                       <td><?= date('H:i:s d/m/Y', strtotime($comment['comment_date'])) ?></td>
+                      <td></td>
+                      <td><a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-warning">Supprimer ce commentaire</a></td>
                     </tr>
                       <?php
                       }

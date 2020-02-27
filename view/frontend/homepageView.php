@@ -46,7 +46,7 @@
           <li><a href="#service">Dernières publications</a></li>
           <li><a href="#contact">Contact</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Liste des chapitres (postView.php)<b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Liste des chapitres<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="index.php?action=post&amp;id=1">Chapitre 1</a></li>
               <li><a href="index.php?action=post&amp;id=2">Chapitre 2</a></li>
@@ -119,19 +119,19 @@
 
                 <i class="fa fa-2x fa-angle-down"></i>
                 <?php for ($i = 0; $i < count($posts); $i++): ?>
-    <div>
-        <h3>
-            <?= htmlspecialchars($posts[$i]['title']) ?>
-            <em>le <?= $posts[$i]['creation_date_fr'] ?></em>
-        </h3>
+                  <div>
+                      <h3>
+                          <?= htmlspecialchars($posts[$i]['title']) ?>
+                          <em>le <?= $posts[$i]['creation_date_fr'] ?></em>
+                      </h3>
         
-        <p>
-            <?= nl2br(htmlspecialchars($posts[$i]['content'])) ?>
-            <br />
-            <em><a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>">Lire ce chapitre</a></em>
-        </p>
-    </div>
-<?php endfor; ?>
+                      <p>
+                          <?= nl2br(htmlspecialchars($posts[$i]['content'])) ?>
+                          <br />
+                          <em><a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>">Lire ce chapitre</a></em>
+                      </p>
+                    </div>
+                  <?php endfor; ?>
                 
               </div>
             </div>
