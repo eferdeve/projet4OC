@@ -18,10 +18,10 @@ class FrontController {
 
     function listPosts()
     {
-        $postManager = new \OpenClassrooms\Blog\Model\PostManager(); //créée un objet du modele
-        $posts = $postManager->getPosts();                           //appelle une fonction de l'objet
+        $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
+        $posts = $postManager->getPosts();                          
     
-        require('view/frontend/listPostsView.php');                 
+        require('view/frontend/homepageView.php');                 
     }
 
     function post()

@@ -48,11 +48,13 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Liste des chapitres (postView.php)<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">postView.php (lien href)</a></li>
-              <li><a href="#">postView.php (lien href)</a></li>
-              <li><a href="#">postView.php (lien href)</a></li>
+              <li><a href="index.php?action=post&amp;id=1">Chapitre 1</a></li>
+              <li><a href="index.php?action=post&amp;id=2">Chapitre 2</a></li>
+              <li><a href="index.php?action=post&amp;id=3">Chapitre 3</a></li>
+              <li><a href="index.php?action=post&amp;id=4">Chapitre 4</a></li>
+              <li><a href="index.php?action=post&amp;id=5">Chapitre 5</a></li>
             </ul>
-            <li><a href="#">Connexion (adminloginView.php)</a></li>
+            <li><a href="index.php?action=login">Connexion</a></li>
           </li>
         </ul>
       </div>
@@ -103,7 +105,7 @@
   <!-- /Section: about -->
 
 
-  <!-- Section: services -->
+  <!-- Section: dernière publication -->
   <section id="service" class="home-section text-center bg-gray">
 
     <div class="heading-about">
@@ -114,77 +116,38 @@
               <div class="section-heading">
                 <h2>Dernières publications</h2>
                   <p>ListPostView.php</p>
-                <i class="fa fa-2x fa-angle-down"></i>
 
+                <i class="fa fa-2x fa-angle-down"></i>
+                <?php for ($i = 0; $i < count($posts); $i++): ?>
+    <div>
+        <h3>
+            <?= htmlspecialchars($posts[$i]['title']) ?>
+            <em>le <?= $posts[$i]['creation_date_fr'] ?></em>
+        </h3>
+        
+        <p>
+            <?= nl2br(htmlspecialchars($posts[$i]['content'])) ?>
+            <br />
+            <em><a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>">Lire ce chapitre</a></em>
+        </p>
+    </div>
+<?php endfor; ?>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-2 col-lg-offset-5">
-          <hr class="marginbot-50">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="wow fadeInLeft" data-wow-delay="0.2s">
-            <div class="service-box">
-              <div class="service-icon">
-                <img src="img/icons/service-icon-1.png" alt="" />
-              </div>
-              <div class="service-desc">
-                <h5>Print</h5>
-                <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="wow fadeInUp" data-wow-delay="0.2s">
-            <div class="service-box">
-              <div class="service-icon">
-                <img src="img/icons/service-icon-2.png" alt="" />
-              </div>
-              <div class="service-desc">
-                <h5>Web Design</h5>
-                <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="wow fadeInUp" data-wow-delay="0.2s">
-            <div class="service-box">
-              <div class="service-icon">
-                <img src="img/icons/service-icon-3.png" alt="" />
-              </div>
-              <div class="service-desc">
-                <h5>Photography</h5>
-                <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="wow fadeInRight" data-wow-delay="0.2s">
-            <div class="service-box">
-              <div class="service-icon">
-                <img src="img/icons/service-icon-4.png" alt="" />
-              </div>
-              <div class="service-desc">
-                <h5>Cloud System</h5>
-                <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="wow bounceInDown" data-wow-delay="0.8s">
+      <div class="col-lg-8 col-lg-offset-2">
+
+      
+
       </div>
     </div>
   </section>
-  <!-- /Section: services -->
+  <!-- /Section: dernière publication -->
 
 
 

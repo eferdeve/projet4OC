@@ -1,12 +1,13 @@
+<?php ob_start(); ?>
     <?php $title = htmlspecialchars($post['title']); ?>
 
-    <?php ob_start(); ?>
+    
 
     <div id="parallax_image2">
         <div class="row h-50">
             <div class="col-md-12 align-self-center">
             <h1>Chapitres</h1>
-                <p><a href="index.php">Retour à la liste des billets</a></p>
+                <p><a href="index.php">Retour à l'accueil</a></p>
                 <div class="news">
         <h3>
             <?= htmlspecialchars($post['title']) ?>
@@ -55,4 +56,4 @@
 
     <?php $content = ob_get_clean(); ?>
 
-    <?php require 'template.php'; ?>
+    <?php require 'templateFront.php'; ?>
