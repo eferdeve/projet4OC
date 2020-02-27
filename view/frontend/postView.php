@@ -47,7 +47,7 @@
         <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
         <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
-            <a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-warning">Signaler</a>
+            <a href="index.php?action=warning&id=<?= $comment['id'] ?>" class="btn btn-warning">Signaler</a>
  
     <?php
     }

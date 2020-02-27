@@ -68,5 +68,12 @@ class BackController {
         $commentdelete = $commentManager->deleteComment($_GET['id']);
     }
 
+    //Signaler un commentaire
+    function warningComment()
+    {
+        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+        $warncomment = $commentManager->warningComment($_GET['id']);
+    }
+
 }
 

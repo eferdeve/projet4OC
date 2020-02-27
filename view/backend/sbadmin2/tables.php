@@ -7,12 +7,12 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Liste des commentaires</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+          <p class="mb-4">Dans cette rubrique vous pouvez lire les commentaires laissés par vos lecteurs, et choisir de les conserver ou de les supprimer.</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Voici la liste complète de tout les commentaires laissés par vos lecteur</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -37,7 +37,7 @@
                       <td><?= htmlspecialchars($comment['author']) ?></td>
                       <td><?= nl2br(htmlspecialchars($comment['comment'])) ?></td>
                       <td><?= date('H:i:s d/m/Y', strtotime($comment['comment_date'])) ?></td>
-                      <td></td>
+                      <td><?= htmlspecialchars($comment['signalement']) ?></td>
                       <td><a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-warning">Supprimer ce commentaire</a></td>
                     </tr>
                       <?php

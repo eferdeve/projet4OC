@@ -47,6 +47,11 @@ try {
             $back->deleteComment();
         }
 
+        //Signalement commentaire
+        if ($_GET['action'] == 'warning') {
+            $back->warningComment();
+        }
+
         //Affichage du loginhome une fois les logs corrects
         if ($_GET['action'] == 'login') {
                 $back->login();

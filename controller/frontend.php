@@ -21,7 +21,7 @@ class FrontController {
         $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
         $posts = $postManager->getPosts();                          
     
-        require('view/frontend/homepageView.php');                 
+        require('view/frontend/listPostsView.php');                 
     }
 
     function post()

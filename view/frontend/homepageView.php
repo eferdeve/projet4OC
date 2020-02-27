@@ -44,16 +44,10 @@
           <li class="active"><a href="#index.php">Accueil</a></li>
           <li><a href="#about">Biographie</a></li>
           <li><a href="#service">Dernières publications</a></li>
+          <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>
           <li><a href="#contact">Contact</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Liste des chapitres<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="index.php?action=post&amp;id=1">Chapitre 1</a></li>
-              <li><a href="index.php?action=post&amp;id=2">Chapitre 2</a></li>
-              <li><a href="index.php?action=post&amp;id=3">Chapitre 3</a></li>
-              <li><a href="index.php?action=post&amp;id=4">Chapitre 4</a></li>
-              <li><a href="index.php?action=post&amp;id=5">Chapitre 5</a></li>
-            </ul>
+
             <li><a href="index.php?action=login">Connexion</a></li>
           </li>
         </ul>
