@@ -41,7 +41,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
         <ul class="nav navbar-nav">
-        <li class="active"><a href="#index.php">Accueil</a></li>
+        <li class="active"><a href="index.php">Accueil</a></li>
           <li><a href="index.php#about">Biographie</a></li>
           <li><a href="index.php#service">Dernières publications</a></li>
           <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>

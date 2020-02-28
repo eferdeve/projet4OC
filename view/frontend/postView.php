@@ -3,24 +3,23 @@
 
     
 
-    <div id="parallax_image2">
-        <div class="row h-50">
-            <div class="col-md-12 align-self-center">
+    
+
+            
             <h1>Chapitres</h1>
                 <p><a href="index.php">Retour à l'accueil</a></p>
-                <div class="news">
+               
         <h3>
             <?= htmlspecialchars($post['title']) ?>
             <em>le <?= $post['creation_date_fr'] ?></em>
         </h3>
-            </div>
-        </div>
-        </div>
+        
+
         
         <p>
             <?= nl2br(htmlspecialchars($post['content'])) ?>
         </p>
-    </div>
+   
 
     <h2>Qu'avez-vous pensez de ce chapitre ?</h2>
 
@@ -34,7 +33,7 @@
             <textarea id="comment" name="comment"></textarea>
         </div>
         <div>
-            <button type="submit" class="btn btn-outline-success">Valider</button>
+            <button type="submit" class="btn btn-success">Valider</button>
         </div>
     </form>
 

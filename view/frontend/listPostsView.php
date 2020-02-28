@@ -1,7 +1,9 @@
 <?php ob_start(); ?>
 
+<title> <?= $title="Chapitres" ?> </title>
+
 <h1>Jean Forteroche</h1>
-<p>Derniers chapitres sorties :</p>
+<p>Chapitres disponibles</p>
 
 <?php for ($i = 0; $i < count($posts); $i++): ?>
     <div class="news">
