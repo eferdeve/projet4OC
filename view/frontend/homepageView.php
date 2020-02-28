@@ -50,7 +50,7 @@
           <?php if (!$_SESSION['admin']): ?>
             <li><a href="index.php?action=login">Connexion</a></li> 
           <?php else :?>
-            <li><a href="index.php?action=sessionActive">Repasser côté admin</a></li> 
+            <li><a href="index.php?action=sessionActive">Tableau de bord (connecté)</a></li> 
           <?php endif; ?>
           
         </ul>
