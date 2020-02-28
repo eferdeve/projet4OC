@@ -27,9 +27,9 @@ class BackController {
     }
 
     //Affichage page modifier un post
-    function editPost()
+    function listingPost()
     {
-        require('view/backend/sbadmin2/editpost.php');
+        require('view/backend/sbadmin2/listingpost.php');
     }
 
     //Déconnexion et destruction de la session en cours

@@ -65,7 +65,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="./index.php?action=newpost"><i class="fas fa-pen-fancy"></i>  Nouveau chapitre</a> 
-            <a class="collapse-item" href="./index.php?action=editpost"><i class="fas fa-user-edit"></i>  Modifier chapitres</a>
+            <a class="collapse-item" href="./index.php?action=listingpost"><i class="fas fa-user-edit"></i>  Modifier chapitres</a>
           </div>
         </div>
       </li>

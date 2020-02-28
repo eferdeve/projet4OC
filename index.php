@@ -27,8 +27,8 @@ try {
         }
 
         //Affichage page modifier un post
-        if ($_GET['action'] == 'editpost') {
-            $back->editPost();
+        if ($_GET['action'] == 'listingpost') {
+            $back->listingPost();
         }
 
         //Déconnexion et destruction de la session en cours
