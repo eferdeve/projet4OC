@@ -39,7 +39,6 @@ try {
         //Déconnexion et destruction de la session en cours
         if ($_GET['action'] == 'logout') {
             $back->logout();
-            header('index.php?action=adminlogin');
         }
 
         //Affichage homepage quand on session active (lien dashboard du template backend)

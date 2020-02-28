@@ -42,7 +42,7 @@ class BackController {
     function logout()
     {
         session_destroy();
-        require('view/frontend/adminloginView.php');
+        require('view/frontend/homepageView.php');
     }
 
     //Affichage page Tables 
