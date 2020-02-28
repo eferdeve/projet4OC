@@ -11,6 +11,11 @@ $back = new BackController();
 try {
     if (isset($_GET['action'])) {
 
+        //Supprimer un post
+        if ($_GET['action'] == 'deletepost') {
+            $back->deletePost();
+        }
+
         //Envoi d'un Post
         if ($_GET['action'] == 'sendpost') {
             if (!empty($_POST['title']) && !empty($_POST['content'])) {

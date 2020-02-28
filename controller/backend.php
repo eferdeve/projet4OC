@@ -34,6 +34,13 @@ class BackController {
         require('view/backend/sbadmin2/listingpost.php');
     }
 
+    //Effacer un post
+     function deletePost()
+     {
+        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+        $deletePost = $postManager->deletePost($_GET['id']);
+     }
+
     //Affichage page modifier un post
     function editPost()
     {

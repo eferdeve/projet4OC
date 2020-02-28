@@ -6,6 +6,13 @@ require_once("model/Manager.php");
 
 class PostManager extends Manager
 {
+    //Suppression post
+    public function deletePost($postId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('DELETE FROM posts WHERE id = ?');
+        $deletePost = $req->execute();
+    }
 
     //Envoie d'un nouveau post
     public function newPost($title, $content)
