@@ -26,6 +26,11 @@ try {
             $back->newPost();
         }
 
+        //Affichage page modifier un post
+        if ($_GET['action'] == 'editpost') {
+            $back->editPost();
+        }
+
         //Déconnexion et destruction de la session en cours
         if ($_GET['action'] == 'logout') {
             $back->logout();
