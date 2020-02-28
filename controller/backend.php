@@ -29,6 +29,8 @@ class BackController {
     //Affichage page liste des posts en tableau dans le backend
     function listingPost()
     {
+        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+        $posts = $postManager->getPosts();
         require('view/backend/sbadmin2/listingpost.php');
     }
 

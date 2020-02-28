@@ -127,7 +127,7 @@
                           <br />
                           <em><a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>">Lire ce chapitre</a></em>
                       </p>
-                    </div>
+                  </div>
                   <?php endfor; ?>
                 
               </div>

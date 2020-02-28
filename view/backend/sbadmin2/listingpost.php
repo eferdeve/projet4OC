@@ -20,12 +20,14 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <?php for ($i = 0; $i < count($posts); $i++): ?>
                     <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td><a href="index.php?action=editpost" class="btn btn-warning">Modifier</a> <a href="#" class="btn btn-danger">Supprimer</a></td>
-                    </tr>      
+                      <td><?= htmlspecialchars($posts[$i]['title']) ?></td>
+                      <td><?= nl2br(htmlspecialchars($posts[$i]['content'])) ?></td>
+                      <td><?= $posts[$i]['creation_date_fr'] ?></td>
+                      <td><a href="index.php?action=editpost" class="btn btn-warning">Modifier</a> <a href="#" class="btn btn-danger">Supprimer</a></td>                     
+                    </tr> 
+                  <?php endfor; ?>     
                   </tbody>
                 </table>
               </div>
