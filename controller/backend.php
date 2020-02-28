@@ -26,10 +26,16 @@ class BackController {
         require('view/backend/sbadmin2/newpost.php');
     }
 
-    //Affichage page modifier un post
+    //Affichage page liste des posts en tableau dans le backend
     function listingPost()
     {
         require('view/backend/sbadmin2/listingpost.php');
+    }
+
+    //Affichage page modifier un post
+    function editPost()
+    {
+        require('view/backend/sbadmin2/editpost.php');
     }
 
     //Déconnexion et destruction de la session en cours

@@ -26,9 +26,14 @@ try {
             $back->newPost();
         }
 
-        //Affichage page modifier un post
+        //Affichage page liste des posts en tableau backend
         if ($_GET['action'] == 'listingpost') {
             $back->listingPost();
+        }
+
+        //Affichage page modifier un post
+        if ($_GET['action'] == 'editpost') {
+            $back->editPost();
         }
 
         //Déconnexion et destruction de la session en cours
