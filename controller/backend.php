@@ -42,7 +42,7 @@ class BackController {
     function logout()
     {
         session_destroy();
-        require('view/frontend/homepageView.php');
+        header('location:index.php');
     }
 
     //Affichage page Tables 
@@ -58,6 +58,8 @@ class BackController {
     {
         if ($_SESSION['admin']) {
             require('view/backend/sbadmin2/dashboard.php');
+        } else {
+            header('location:index.php');
         }
     }
 
@@ -69,7 +71,7 @@ class BackController {
         if (!$admin) {
             require('view/frontend/adminloginView.php');
         } else {
-            require('view/backend/sbadmin2/dashboard.php'); //faire une fonction juste pour afficher le dashbaord, puis appeler celle-ci ici.
+            header("location:index.php?action=sessionActive"); //faire une fonction juste pour afficher le dashbaord, puis appeler celle-ci ici.
         }
     }
 

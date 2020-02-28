@@ -46,10 +46,13 @@
           <li><a href="index.php#service">Dernières publications</a></li>
           <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>
           <li><a href="index.php#contact">Contact</a></li>
-          <li class="dropdown">
 
-          <li><a href="index.php?action=login">Connexion</a></li>
-          </li>
+          <?php if (!$_SESSION['admin']): ?>
+            <li><a href="index.php?action=login">Connexion</a></li> 
+          <?php else :?>
+            <li><a href="index.php?action=sessionActive">Repasser côté admin</a></li> 
+          <?php endif; ?>
+          
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -61,7 +64,7 @@
   <section id="intro" class="intro">
 
     <div class="slogan">
-      <h2><?= htmlspecialchars($post['title']) ?></h2> <!-- title de la page en php -->
+      <h2><?= $title ?></h2> <!-- title de la page en php -->
       <h4>UN ROMAN EN LIGNE INEDIT</h4>
     </div>
     <div class="page-scroll">

@@ -46,10 +46,13 @@
           <li><a href="#service">Dernières publications</a></li>
           <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li class="dropdown">
 
-            <li><a href="index.php?action=login">Connexion</a></li>
-          </li>
+          <?php if (!$_SESSION['admin']): ?>
+            <li><a href="index.php?action=login">Connexion</a></li> 
+          <?php else :?>
+            <li><a href="index.php?action=sessionActive">Repasser côté admin</a></li> 
+          <?php endif; ?>
+          
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -109,10 +112,10 @@
             <div class="wow bounceInDown" data-wow-delay="0.4s">
               <div class="section-heading">
                 <h2>Dernières publications</h2>
-                  <p>ListPostView.php</p>
+                  <p>Dernieres publications</p>
 
                 <i class="fa fa-2x fa-angle-down"></i>
-                <?php for ($i = 0; $i < count($posts); $i++): ?>
+                <?php for ($i = 0; $i < 3; $i++): ?>
                   <div>
                       <h3>
                           <?= htmlspecialchars($posts[$i]['title']) ?>

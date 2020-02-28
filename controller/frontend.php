@@ -13,6 +13,8 @@ class FrontController {
 
     function homepage()
     {
+        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+        $posts = $postManager->getPosts();
         require('view/frontend/homepageView.php'); 
     }
 
