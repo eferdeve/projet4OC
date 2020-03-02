@@ -82,11 +82,6 @@ try {
             $front->adminLogin();
         }
 
-        //Affichage de la page contact
-        if ($_GET['action'] == 'contact') {
-            $front->contact();
-        }
-
         //Affichage de la liste des chapitres
         if ($_GET['action'] == 'listPosts') {
             $front->listPosts();

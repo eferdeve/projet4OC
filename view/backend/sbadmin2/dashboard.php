@@ -60,11 +60,14 @@
           <!-- Approach -->
            <div class="card shadow mb-4">
              <div class="card-header py-3">
-               <h6 class="m-0 font-weight-bold text-primary">Dernier Billet rédigé le (date de rédaction du billet)</h6>
+               <?php for ($i = 0; $i < 1; $i++): ?>
+               <h6 class="m-0 font-weight-bold text-primary">Dernier Billet rédigé le <?= $posts[$i]['creation_date_fr'] ?></h6>
              </div>
              <div class="card-body">
-               <h2> Titre du billet </h2>
-               <p class="mb-0">Extrait du billet.</p>
+             
+               <h2><?= htmlspecialchars($posts[$i]['title']) ?></h2>
+               <p class="mb-0"> <?= nl2br(htmlspecialchars($posts[$i]['content'])) ?></p>
+               <?php endfor; ?>
              </div>
            </div>
 

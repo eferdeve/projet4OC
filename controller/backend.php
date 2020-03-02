@@ -69,6 +69,8 @@ class BackController {
     function adminHomepage()
     {
         if ($_SESSION['admin']) {
+            $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+            $posts = $postManager->getPosts();
             require('view/backend/sbadmin2/dashboard.php');
         } else {
             header('location:index.php');
@@ -83,7 +85,7 @@ class BackController {
         if (!$admin) {
             require('view/frontend/adminloginView.php');
         } else {
-            header("location:index.php?action=sessionActive"); //faire une fonction juste pour afficher le dashbaord, puis appeler celle-ci ici.
+            header("location:index.php?action=sessionActive"); 
         }
     }
 
