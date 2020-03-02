@@ -6,6 +6,13 @@ require_once("model/Manager.php");
 
 class PostManager extends Manager
 {
+    //Modification en BDD d'un chapitre via editPost
+    public function updatePost($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->query("UPDATE posts SET title = '?', content = '?' WHERE id = $id");
+    }
+
     //Suppression post
     public function deletePost($postId)
     {

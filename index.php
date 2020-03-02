@@ -11,6 +11,12 @@ $back = new BackController();
 try {
     if (isset($_GET['action'])) {
 
+        //Modifier en BDD un post
+        if ($_GET['action'] == 'updatepost') {
+            $back->updatePost();
+        }
+
+
         //Supprimer un post
         if ($_GET['action'] == 'deletepost') {
             $back->deletePost();

@@ -39,11 +39,14 @@ class BackController {
      {
         $postManager = new \OpenClassrooms\Blog\Model\PostManager();
         $deletePost = $postManager->deletePost($_GET['id']);
+        header('Location: index.php?action=listingpost');
      }
 
     //Affichage page modifier un post
     function editPost()
     {
+        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+        $post = $postManager->getPost($_GET['id']);
         require('view/backend/sbadmin2/editpost.php');
     }
 
@@ -96,6 +99,13 @@ class BackController {
     {
         $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
         $warncomment = $commentManager->warningComment($_GET['id']);
+    }
+
+    function updatePost()
+    {
+        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+        $postUpdate = $postManager->updatePost($title, $content);
+        $post = $postManager->getPost($_GET['id']);
     }
 
 }

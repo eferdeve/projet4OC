@@ -15,12 +15,12 @@
 
 <h1>Modifier un chapitre existant</h1>
 
-<form id="edit" action="index.php?action=" method="post">
+<form id="edit" action="index.php?action=updatepost&id=<?= $posts['id'] ?>" method="post">
     <h3>Titre du chapitre</h3>
-    <input type="text" name="title" class="input-group-text" id="inputGroup-sizing-lg"></input>
+    <input type="text" value="<?= htmlspecialchars($post['title']) ?>" name="title" class="input-group-text" id="inputGroup-sizing-lg"></input>
 
     <h3>Contenu du chapitre</h3>
-    <textarea name="content" id="mytextarea">Contenu du chapitre ici</textarea>
+    <textarea name="content" id="mytextarea"><?= $post['content']; ?></textarea>
     <button type="submit">Envoyez</button>
 </form>
 
