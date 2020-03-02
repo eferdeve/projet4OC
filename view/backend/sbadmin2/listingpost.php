@@ -26,7 +26,7 @@
           <td><?= nl2br(htmlspecialchars($posts[$i]['content'])) ?></td>
           <td><?= $posts[$i]['creation_date_fr'] ?></td>
           <td><a href="index.php?action=editpost" class="btn btn-warning">Modifier</a> 
-          <a href="index.php?action=deletepost&id=<?= $posts['id'] ?>" class="btn btn-danger">Supprimer</a></td>                     
+          <a href="index.php?action=deletepost&id=<?= $posts[$i]['id'] ?>" class="btn btn-danger">Supprimer</a></td>                     
         </tr> 
       <?php endfor; ?>     
       </tbody>
