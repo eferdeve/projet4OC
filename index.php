@@ -72,6 +72,11 @@ try {
             $back->warningComment();
         }
 
+        //Désignalement commentaire
+        if ($_GET['action'] == 'unwarning') {
+            $back->unwarningComment();
+        }
+
         //Affichage du loginhome une fois les logs corrects
         if ($_GET['action'] == 'login') {
                 $back->login();

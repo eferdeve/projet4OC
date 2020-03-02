@@ -10,7 +10,7 @@ class PostManager extends Manager
     public function updatePost($id)
     {
         $db = $this->dbConnect();
-        $req = $db->query("UPDATE posts SET title = '?', content = '?' WHERE id = $id");
+        $req = $db->query("UPDATE posts SET title = '?', content = '?' WHERE id=$id");
     }
 
     //Suppression post

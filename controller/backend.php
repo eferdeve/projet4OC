@@ -94,6 +94,7 @@ class BackController {
     {
         $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
         $commentdelete = $commentManager->deleteComment($_GET['id']);
+        header("location:index.php?action=tables");
     }
 
     //Signaler un commentaire
@@ -103,11 +104,19 @@ class BackController {
         $warncomment = $commentManager->warningComment($_GET['id']);
     }
 
+    //Désignaler un commentaire
+    function unwarningComment()
+    {
+        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+        $warncomment = $commentManager->unwarningComment($_GET['id']);
+        header("location:index.php?action=tables");
+    }
+
     function updatePost()
     {
         $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $postUpdate = $postManager->updatePost($title, $content);
-        $post = $postManager->getPost($_GET['id']);
+        $postUpdate = $postManager->updatePost($_GET['id'], $title, $content);
+        
     }
 
 }

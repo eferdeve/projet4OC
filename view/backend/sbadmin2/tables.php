@@ -39,7 +39,7 @@
                       <td><?= date('H:i:s d/m/Y', strtotime($comment['comment_date'])) ?></td>
                       <td><?= htmlspecialchars($comment['signalement']) ?></td>
                       <td><a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-danger">Supprimer ce commentaire</a>
-                      <a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-success">Supprimer le signalement</a>
+                      <a href="index.php?action=unwarning&id=<?= $comment['id'] ?>" class="btn btn-success">Supprimer le signalement</a>
 
                       </td>
                     </tr>

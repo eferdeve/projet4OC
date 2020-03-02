@@ -15,7 +15,7 @@
 
 <h1>Modifier un chapitre existant</h1>
 
-<form id="edit" action="index.php?action=updatepost&id=<?= $posts['id'] ?>" method="post">
+<form id="edit" action="index.php?action=updatepost&id=<?= $post['id'] ?>" method="post">
     <h3>Titre du chapitre</h3>
     <input type="text" value="<?= htmlspecialchars($post['title']) ?>" name="title" class="input-group-text" id="inputGroup-sizing-lg"></input>
 
