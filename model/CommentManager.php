@@ -48,6 +48,6 @@ class CommentManager extends Manager
     public function unwarningComment($id)
     {
         $db = $this->dbConnect();
-        $commentTarget = $db->query("UPDATE comments SET signalement = '0' WHERE id=$id");
+        $commentTarget = $db->query("UPDATE comments SET signalement = 'Non' WHERE id=$id");
     }
 }
