@@ -65,7 +65,7 @@
 
     <div class="slogan">
       <h2><?= $title ?></h2> <!-- title de la page en php -->
-      <h4>UN ROMAN EN LIGNE INEDIT</h4>
+      <h4>COMMENCER MA LECTURE</h4>
     </div>
     <div class="page-scroll">
       <a href="#pagecontent" class="btn btn-circle">

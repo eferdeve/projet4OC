@@ -65,7 +65,7 @@
 
     <div class="slogan">
       <h2>BILLET SIMPLE POUR L'ALASKA</h2>
-      <h4>UN ROMAN EN LIGNE INEDIT</h4>
+      <h4>COMMENCER VOTRE LECTURE</h4>
     </div>
     <div class="page-scroll">
       <a href="#service" class="btn btn-circle">
@@ -112,8 +112,7 @@
             <div class="wow bounceInDown" data-wow-delay="0.4s">
               <div class="section-heading">
                 <h2>Dernières publications</h2>
-                  <p>Dernieres publications</p>
-
+            
                 <i class="fa fa-2x fa-angle-down"></i>
                 <?php for ($i = 0; $i < 3; $i++): ?>
                   <div>
@@ -177,7 +176,7 @@
         <div class="col-lg-8">
           <div class="boxed-grey">
 
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="sendmessage">VOTRE MESSAGE À ÉTÉ ENVOYÉ, MERCI !</div>
             <div id="errormessage"></div>
             <form id="contact-form" action="" method="post" role="form" class="contactForm">
               <div class="row">
