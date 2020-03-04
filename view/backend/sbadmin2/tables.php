@@ -38,8 +38,32 @@
                       <td><?= nl2br(htmlspecialchars($comment['comment'])) ?></td>
                       <td><?= date('H:i:s d/m/Y', strtotime($comment['comment_date'])) ?></td>
                       <td><?= htmlspecialchars($comment['signalement']) ?></td>
-                      <td><a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-danger">Supprimer ce commentaire</a>
-                      <a href="index.php?action=unwarning&id=<?= $comment['id'] ?>" class="btn btn-success">Supprimer le signalement</a>
+                      <td>
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                        Supprimer le commentaire
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                       <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Vous êtes sûre ?</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Ce commentaire sera supprimé et n'apparaîtra plus sur votre site !
+                           </div>
+                           <div class="modal-footer">
+                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                             <a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-danger">Supprimer ce commentaire</a>
+                          </div>
+                         </div>
+                       </div>
+                      </div>
+                      <a href="index.php?action=unwarning&id=<?= $comment['id'] ?>" class="btn btn-success">Retirer le signalement</a>
 
                       </td>
                     </tr>
