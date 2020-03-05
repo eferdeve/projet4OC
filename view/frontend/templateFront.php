@@ -9,6 +9,8 @@
 
   <title> <?= $title ?> </title>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   <!-- Bootstrap Core CSS -->
   <link href="vendorsFront/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
@@ -80,7 +82,7 @@
   <section id="pagecontent">
 
   <div class="container">
-    <button type="button" class="btn btn-light">Mode nuit</button>
+    <button type="button" id="night" class="btn btn-light">Mode nuit</button>
   </div>
   
 <!-- ob_get_start -->
@@ -117,7 +119,7 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="/main.js"></script>
   <!-- Core JavaScript Files -->
   <script src="vendorsFront/js/jquery.min.js"></script>
   <script src="vendorsFront/js/bootstrap.min.js"></script>
