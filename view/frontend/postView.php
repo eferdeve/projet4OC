@@ -11,11 +11,9 @@
                                <h2><?= htmlspecialchars($post['title']) ?></h2>
                                <p><a href="index.php">Retour à l'accueil</a></p>
                                <p> 
-                               
-                               <a class="btn btn-primary" role="button" href="#"><- Chapitre précédent</a>
-                               <a class="btn btn-primary" role="button" href="#">Chapitre suivant -></a>
+                               <a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $post['id']-1 ?>"><- Chapitre précédent</a>
+                               <a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $post['id']+1 ?>">Chapitre suivant -></a>
                                </p>
-                                
                                <i class="fa fa-2x fa-angle-down"></i>
                            </div>
                            <div class="team boxed-grey">
@@ -59,7 +57,7 @@
         </div>
         <div>
             <label for="comment">Votre commentaire</label><br />
-            <textarea id="comment" name="comment"></textarea>
+            <textarea id="comment" name="comment" cols="50"></textarea>
         </div>
         <div>
             <button type="submit" class="btn btn-success">Valider</button>
@@ -78,6 +76,7 @@
                        <div class="wow bounceInDown animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;">
                            <div class="section-heading">
                                 <h2>Tout les avis sur ce chapitre</h2>
+                                <i class="fa fa-2x fa-angle-down"></i>
                            </div>
                        </div>
                    </div>
@@ -90,16 +89,16 @@
     while ($comment = $comments->fetch())
     {
     ?>
-        <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-        <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-
-            <a href="index.php?action=warning&id=<?= $comment['id'] ?>" class="btn btn-warning">Signaler</a>
- 
+    <div class="container">
+        <div class="team boxed-grey">
+            <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+             <a href="index.php?action=warning&id=<?= $comment['id'] ?>" class="btn btn-warning">Signaler</a>
+        </div>
+    </div>
     <?php
     }
-    
     ?> 
 
-    <?php $content = ob_get_clean(); ?>
-
-    <?php require 'templateFront.php'; ?>
+<?php $content = ob_get_clean(); ?>
+<?php require 'templateFront.php'; ?>

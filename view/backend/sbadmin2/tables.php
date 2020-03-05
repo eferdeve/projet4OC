@@ -31,7 +31,6 @@
                     <?php
                     while ($comment = $comments->fetch())
                     {
-
                     ?>
                     <tr>
                       <td><?= htmlspecialchars($comment['author']) ?></td>
@@ -39,12 +38,12 @@
                       <td><?= date('H:i:s d/m/Y', strtotime($comment['comment_date'])) ?></td>
                       <td><?= htmlspecialchars($comment['signalement']) ?></td>
                       <td>
-                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
                         Supprimer le commentaire
                       </button>
 
                       <!-- Modal -->
-                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                        <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -54,7 +53,7 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                              Ce commentaire sera supprimé et n'apparaîtra plus sur votre site !
+                              Ce commentaire sera supprimé et n'apparaitre plus sur le site
                            </div>
                            <div class="modal-footer">
                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
@@ -63,6 +62,7 @@
                          </div>
                        </div>
                       </div>
+                      
                       <a href="index.php?action=unwarning&id=<?= $comment['id'] ?>" class="btn btn-success">Retirer le signalement</a>
 
                       </td>

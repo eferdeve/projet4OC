@@ -79,8 +79,10 @@
 
   <section id="pagecontent">
 
-
-
+  <div class="container">
+    <button type="button" class="btn btn-light">Mode nuit</button>
+  </div>
+  
 <!-- ob_get_start -->
 <?= $content ?>
 <!-- ob_get_ -->
@@ -115,6 +117,7 @@
     </div>
   </footer>
 
+  <script src="main.js"></script>
   <!-- Core JavaScript Files -->
   <script src="vendorsFront/js/jquery.min.js"></script>
   <script src="vendorsFront/js/bootstrap.min.js"></script>
@@ -124,6 +127,7 @@
   <!-- Custom Theme JavaScript -->
   <script src="vendorsFront/js/custom.js"></script>
   <script src="vendorsFront/contactform/contactform.js"></script>
+  
 
 </body>
 
