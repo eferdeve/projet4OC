@@ -122,7 +122,7 @@
                       </h3>
         
                       <p>
-                          <?= nl2br(htmlspecialchars($posts[$i]['content'])) ?>
+                          <?= nl2br($posts[$i]['content']) ?>
                           <br />
                           <em><a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>">Lire ce chapitre</a></em>
                       </p>

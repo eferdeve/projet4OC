@@ -66,7 +66,7 @@
              <div class="card-body">
              
                <h2><?= htmlspecialchars($posts[$i]['title']) ?></h2>
-               <p class="mb-0"> <?= substr(nl2br(htmlspecialchars($posts[$i]['content'])), 0, 400) . '[...]' ?></p>
+               <p class="mb-0"> <?= substr(nl2br($posts[$i]['content']), 0, 400) . '[...]' ?></p>
                <?php endfor; ?>
              </div>
            </div>

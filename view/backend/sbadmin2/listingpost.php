@@ -23,7 +23,7 @@
       <?php for ($i = 0; $i < count($posts); $i++): ?>
         <tr>
           <td><?= htmlspecialchars($posts[$i]['title']) ?></td>
-          <td><?= substr(nl2br(htmlspecialchars($posts[$i]['content'])), 0, 100) ?> [...]</td>
+          <td><?= substr(nl2br($posts[$i]['content']), 0, 100) ?> [...]</td>
           <td><?= $posts[$i]['creation_date_fr'] ?></td>
           <td><a href="index.php?action=editpost&id=<?= $posts[$i]['id'] ?>" class="btn btn-warning">Modifier</a> 
 

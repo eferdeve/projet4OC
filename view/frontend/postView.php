@@ -18,7 +18,7 @@
                            </div>
                            <div class="team boxed-grey">
                                 <p>
-                                    <?= nl2br(htmlspecialchars($post['content'])) ?>
+                                    <?= nl2br($post['content']) ?>
                                 </p>
                            </div>
                        </div>
