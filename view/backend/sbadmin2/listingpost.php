@@ -27,8 +27,6 @@
           <td><?= $posts[$i]['creation_date_fr'] ?></td>
           <td><a href="index.php?action=editpost&id=<?= $posts[$i]['id'] ?>" class="btn btn-warning">Modifier</a> 
 
-          <!-- <a href="index.php?action=deletepost&id=<?= $posts[$i]['id'] ?>" class="btn btn-danger">Supprimer</a> -->
-
           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletepost<?= $posts[$i]['id'] ?>">
             Supprimer le chapitre
           </button>
@@ -44,7 +42,7 @@
                    </button>
                 </div>
                 <div class="modal-body">
-                  Ce commentaire sera supprimé et n'apparaitre plus sur le site
+                  Ce chapitre sera supprimé et n'apparaitre plus sur le site
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
