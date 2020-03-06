@@ -22,5 +22,3 @@ class NightMode {
     }
     
 }
-
-let nightmode = new NightMode();

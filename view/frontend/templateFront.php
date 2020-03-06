@@ -120,7 +120,9 @@
     </div>
   </footer>
 
-  <script src="nightmode.js"></script>
+  <!-- JavaScript personnalisé -->
+  <script src="public/nightmode.js"></script>
+  <script src="public/main.js"></script>
   <!-- Core JavaScript Files -->
   <script src="vendorsFront/js/jquery.min.js"></script>
   <script src="vendorsFront/js/bootstrap.min.js"></script>

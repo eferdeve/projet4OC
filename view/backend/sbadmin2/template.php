@@ -9,6 +9,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <script src="https://cdn.tiny.cloud/1/o3c2sxpgjnq497a5mc1nl1iydwqt21798wglujodui2g2zsr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   
 
   <title><?= $title ?></title>
@@ -328,6 +330,10 @@
       </div>
     </div>
   </div>
+
+
+  <!-- JavaScript personnalisé-->
+  <script src="public/main.js"></script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendors/vendor/jquery/jquery.min.js"></script>

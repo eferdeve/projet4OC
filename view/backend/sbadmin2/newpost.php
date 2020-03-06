@@ -65,33 +65,8 @@ tinymce.init({
 
     <h3>CONTENU</h3>
     <textarea name="content" id="mytextarea">Contenu du chapitre ici</textarea>
-    <button type="submit">Envoyez</button>
+    <button type="submit" id="newPostConfirm">Envoyez</button>
 </form>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="delete<?= $comment['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-     <div class="modal-content">
-       <div class="modal-header">
-         <h5 class="modal-title" id="exampleModalLabel">Vous êtes sûr(e) ?</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-           <span aria-hidden="true">&times;</span>
-        </button>
-       </div>
-      <div class="modal-body">
-       Ce commentaire sera supprimé et n'apparaitre plus sur le site
-      </div>
-       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-         <a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-danger">Supprimer ce commentaire</a>
-     </div>
-    </div>
-   </div>  
-  </div>
-
-
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php')?>
