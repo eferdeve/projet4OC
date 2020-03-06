@@ -332,9 +332,7 @@
   </div>
 
 
-  <!-- JavaScript personnalisé-->
   <script src="public/main.js"></script>
-
   <!-- Bootstrap core JavaScript-->
   <script src="vendors/vendor/jquery/jquery.min.js"></script>
   <script src="vendors/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
