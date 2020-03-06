@@ -102,6 +102,7 @@ class BackController {
     {
         $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
         $warncomment = $commentManager->warningComment($_GET['id']);
+        header('Location: index.php?action=post&id=' . $_GET['postId']);
     }
 
     //Désignaler un commentaire
@@ -112,11 +113,10 @@ class BackController {
         header("location:index.php?action=tables");
     }
 
-    function updatePost()
+    function updatePost($title, $content, $id)
     {
         $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $postUpdate = $postManager->updatePost($_GET['id'], $title, $content);
-        
+        $postUpdate = $postManager->updatePost($title, $content, $id);
     }
 
 }

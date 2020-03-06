@@ -14,14 +14,14 @@ class FrontController {
     function homepage()
     {
         $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $posts = $postManager->getPosts();
+        $posts = array_reverse($postManager->getPosts()); 
         require('view/frontend/homepageView.php'); 
     }
 
     function listPosts()
     {
         $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
-        $posts = $postManager->getPosts();                          
+        $posts = $postManager->getPosts();                         
     
         require('view/frontend/listPostsView.php');                 
     }

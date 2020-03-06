@@ -75,7 +75,7 @@
                    <div class="col-lg-8 col-lg-offset-2">
                        <div class="wow bounceInDown animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;">
                            <div class="section-heading">
-                                <h2>Tout les avis sur ce chapitre</h2>
+                                <h2>Tous les avis sur ce chapitre</h2>
                                 <i class="fa fa-2x fa-angle-down"></i>
                            </div>
                        </div>
@@ -93,7 +93,7 @@
         <div class="team boxed-grey">
             <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-             <a href="index.php?action=warning&id=<?= $comment['id'] ?>" class="btn btn-warning">Signaler</a>
+             <a href="index.php?action=warning&id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" class="btn btn-warning">Signaler</a>
         </div>
     </div>
     <?php

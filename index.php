@@ -13,7 +13,11 @@ try {
 
         //Modifier en BDD un post
         if ($_GET['action'] == 'updatepost') {
-            $back->updatePost();
+            if (isset($_GET['id']) && isset($_POST['title']) && isset($_POST['content']) && !empty($_GET['id']) && !empty($_POST['title']) && !empty($_POST['content'])) {
+                $back->updatePost($_POST['title'], $_POST['content'], $_GET['id']);
+            } else {
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
         }
 
 

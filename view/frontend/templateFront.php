@@ -82,7 +82,8 @@
   <section id="pagecontent">
 
   <div class="container">
-    <button type="button" id="night" class="btn btn-light">Mode nuit</button>
+     <button type="button" id="night" class="btn btn-light">Passer en Mode nuit</button>
+     <button type="button" id="light" class="btn btn-light">Passer en Mode jour</button>
   </div>
   
 <!-- ob_get_start -->
@@ -119,7 +120,7 @@
     </div>
   </footer>
 
-  <script src="/main.js"></script>
+  <script src="nightmode.js"></script>
   <!-- Core JavaScript Files -->
   <script src="vendorsFront/js/jquery.min.js"></script>
   <script src="vendorsFront/js/bootstrap.min.js"></script>

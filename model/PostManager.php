@@ -7,10 +7,11 @@ require_once("model/Manager.php");
 class PostManager extends Manager
 {
     //Modification en BDD d'un chapitre via editPost
-    public function updatePost($id)
+    public function updatePost($title, $content, $id)
     {
         $db = $this->dbConnect();
-        $req = $db->query("UPDATE posts SET title = '?', content = '?' WHERE id=$id");
+        $req = $db->prepare("UPDATE posts SET title = ?, content = ? WHERE id=?");
+        $req->execute(array($title, $content, $id));
     }
 
     //Suppression post
@@ -25,7 +26,7 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         $req = $db->prepare("INSERT INTO posts(title, content, creation_date) VALUES(?, ?, NOW())");
-        $reqPost = $req->execute(array($title, $content));
+        $req->execute(array($title, $content));
     }
 
     public function getPosts()
