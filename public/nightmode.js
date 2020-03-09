@@ -12,13 +12,19 @@ class NightMode {
         $('#pagecontent').css('background-color', 'black');
         $('#night').hide();
         $('#light').show();
+        $('#light').css('color', 'white');
+        $('#light').css('background', 'black');
+        $('.boxed-grey').css('background', 'black');
+        $('p').css('color', 'white');
     }
 
     Light() {
         $('#pagecontent').css('background-color', 'white');  
         $('#light').css('font-color', 'white'); 
         $('#light').hide()
-         $('#night').show();
+        $('#night').show();
+        $('.boxed-grey').css('background', '#f9f9f9');
+        $('p').css('color', '#666');
     }
     
 }
