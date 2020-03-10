@@ -8,11 +8,11 @@ class CommentManager extends Manager
 {
     public function getAllComments()
     {
-            $db = $this->dbConnect();
-            $comments = $db->prepare('SELECT * FROM comments ORDER BY comment_date DESC');
-            $comments->execute();
+        $db = $this->dbConnect();
+        $comments = $db->prepare('SELECT * FROM comments ORDER BY comment_date DESC');
+        $comments->execute();
     
-            return $comments;
+        return $comments;
     }
 
     public function getComments($postId)
@@ -49,5 +49,12 @@ class CommentManager extends Manager
     {
         $db = $this->dbConnect();
         $commentTarget = $db->query("UPDATE comments SET signalement = 'Non' WHERE id=$id");
+    }
+
+    public function counterComment()
+    {
+        $db = $this->dbConnect();
+        $commentcount = $db->prepare("SELECT COUNT(id) FROM comments");
+        $commentcount->execute();
     }
 }

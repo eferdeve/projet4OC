@@ -65,6 +65,14 @@ class BackController {
         require('view/backend/sbadmin2/tables.php');
     }
 
+    //Affichage nombre de commentaires
+    function commentCount()
+    {
+        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+        $commentcount = $commentManager->counterComment();
+        require('view/backend/sbadmin2/tables.php');
+    }
+
     //Affichage homepage quand on est connecté
     function adminHomepage()
     {
@@ -117,6 +125,7 @@ class BackController {
     {
         $postManager = new \OpenClassrooms\Blog\Model\PostManager();
         $postUpdate = $postManager->updatePost($title, $content, $id);
+        header("location:index.php?action=listingpost");
     }
 
 }

@@ -64,6 +64,7 @@ try {
         //Affichage page liste des commentaire ( Tables )
         if ($_GET['action'] == 'tables') {
             $back->tables();
+            $back->commentCount();
         }
 
         //Suppression d'un commentaire
