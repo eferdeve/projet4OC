@@ -14,9 +14,9 @@
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Voici la liste complète de tout les commentaires laissés par vos lecteur</h6>
               </br>
-              <h6 class="m-0 font-weight-bold text-primary">TOTAL = <?= $commentcount ?></h6>
+              <h6 class="m-0 font-weight-bold text-primary">TOTAL = <?= $this->commentcount['countercom'] ?></h6>
               </br>
-              <h6 class="m-0 font-weight-bold text-primary">SIGNALEMENT = </h6>
+              <h6 class="m-0 font-weight-bold text-primary">SIGNALEMENT = <?= $this->commentwarncount['counterwarncom'] ?> </h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -33,21 +33,21 @@
                   <tbody>
                     
                     <?php
-                    while ($comment = $comments->fetch())
+                    for ($i=0; $i < count($comments); $i++)
                     {
                     ?>
                     <tr>
-                      <td><?= htmlspecialchars($comment['author']) ?></td>
-                      <td><?= nl2br(htmlspecialchars($comment['comment'])) ?></td>
-                      <td><?= date('H:i:s d/m/Y', strtotime($comment['comment_date'])) ?></td>
-                      <td><?= htmlspecialchars($comment['signalement']) ?></td>
+                      <td><?= htmlspecialchars($comments[$i]['author']) ?></td>
+                      <td><?= nl2br(htmlspecialchars($comments[$i]['comment'])) ?></td>
+                      <td><?= date('H:i:s d/m/Y', strtotime($comments[$i]['comment_date'])) ?></td>
+                      <td><?= htmlspecialchars($comments[$i]['signalement']) ?></td>
                       <td>
-                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?= $comment['id'] ?>">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?= $comments[$i]['id'] ?>">
                         Supprimer le commentaire
                       </button>
 
                       <!-- Modal -->
-                      <div class="modal fade" id="delete<?= $comment['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="delete<?= $comments[$i]['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                        <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -61,13 +61,13 @@
                            </div>
                            <div class="modal-footer">
                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                             <a href="index.php?action=comdelet&id=<?= $comment['id'] ?>" class="btn btn-danger">Supprimer ce commentaire</a>
+                             <a href="index.php?action=comdelet&id=<?= $comments[$i]['id'] ?>" class="btn btn-danger">Supprimer ce commentaire</a>
                           </div>
                          </div>
                        </div>
                       </div>
                       
-                      <a href="index.php?action=unwarning&id=<?= $comment['id'] ?>" class="btn btn-success">Retirer le signalement</a>
+                      <a href="index.php?action=unwarning&id=<?= $comments[$i]['id'] ?>" class="btn btn-success">Retirer le signalement</a>
 
                       </td>
                     </tr>

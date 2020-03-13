@@ -11,8 +11,8 @@ class CommentManager extends Manager
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT * FROM comments ORDER BY comment_date DESC');
         $comments->execute();
-    
-        return $comments;
+        $myvar = $comments->fetchAll();
+        return $myvar;
     }
 
     public function getComments($postId)
@@ -54,7 +54,16 @@ class CommentManager extends Manager
     public function counterComment()
     {
         $db = $this->dbConnect();
-        $commentcount = $db->prepare("SELECT COUNT(id) FROM comments");
-        $commentcount->execute();
+        $commentcount = $db->query("SELECT COUNT(id) AS countercom FROM comments");
+        $myvar = $commentcount->fetch();
+        return $myvar;
+    }
+
+    public function warnCounterComment()
+    {
+        $db = $this->dbConnect();
+        $commentwarncount = $db->query("SELECT COUNT(id) AS counterwarncom FROM comments WHERE signalement='Oui'");
+        $myvar = $commentwarncount->fetch();
+        return $myvar;
     }
 }

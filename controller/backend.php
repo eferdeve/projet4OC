@@ -6,12 +6,20 @@ require_once('model/CommentManager.php');
 require_once('model/login.php');
 
 class BackController {
+    public function __construct()
+    {
+        $this->commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+        $this->postManager = new \OpenClassrooms\Blog\Model\PostManager();
+        $this->logs = new \OpenClassrooms\Blog\Model\Login();
+        $this->commentwarncount = $this->commentManager->warnCounterComment();
+        $this->commentcount = $this->commentManager->counterComment();
+    
+    }
 
     //Envoie d'un nouveau post
-    function sendpost($title, $content)
+    public function sendpost($title, $content)
     {
-        $post = new \OpenClassrooms\Blog\Model\PostManager();
-        $reqPost = $post->newPost($title, $content);
+        $reqPost = $this->postManager->newPost($title, $content);
         if ($reqPost === false) {
             throw new Exception('Impossible d\'ajouter le billet !');
         }
@@ -21,64 +29,52 @@ class BackController {
     }
 
     //Affichage page Nouveau Post
-    function newPost()
+    public function newPost()
     {
         require('view/backend/sbadmin2/newpost.php');
     }
 
     //Affichage page liste des posts en tableau dans le backend
-    function listingPost()
+    public function listingPost()
     {
-        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $posts = $postManager->getPosts();
+        $posts = $this->postManager->getPosts();
         require('view/backend/sbadmin2/listingpost.php');
     }
 
     //Effacer un post
-     function deletePost()
+     public function deletePost()
      {
-        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $deletePost = $postManager->deletePost($_GET['id']);
+        $deletePost = $this->postManager->deletePost($_GET['id']);
         header('Location: index.php?action=listingpost');
      }
 
     //Affichage page modifier un post
-    function editPost()
+    public function editPost()
     {
-        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $post = $postManager->getPost($_GET['id']);
+        $post = $this->postManager->getPost($_GET['id']);
         require('view/backend/sbadmin2/editpost.php');
     }
 
     //Déconnexion et destruction de la session en cours
-    function logout()
+    public function logout()
     {
         session_destroy();
         header('location:index.php');
     }
 
     //Affichage page Tables 
-    function tables()
+    public function tables()
     {
-        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-        $comments = $commentManager->getAllComments();
-        require('view/backend/sbadmin2/tables.php');
-    }
-
-    //Affichage nombre de commentaires
-    function commentCount()
-    {
-        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-        $commentcount = $commentManager->counterComment();
+        $comments = $this->commentManager->getAllComments();
+        $commentcount = $this->commentManager->counterComment();
         require('view/backend/sbadmin2/tables.php');
     }
 
     //Affichage homepage quand on est connecté
-    function adminHomepage()
+    public function adminHomepage()
     {
         if ($_SESSION['admin']) {
-            $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-            $posts = $postManager->getPosts();
+            $posts = $this->postManager->getPosts();
             require('view/backend/sbadmin2/dashboard.php');
         } else {
             header('location:index.php');
@@ -86,10 +82,9 @@ class BackController {
     }
 
     //Affichage de la homepage login
-    function login()
+    public function login()
     {
-        $logs = new \OpenClassrooms\Blog\Model\Login();
-        $admin = $logs->log($_POST['identifiant'], $_POST['mdp']);
+        $admin = $this->logs->log($_POST['identifiant'], $_POST['mdp']);
         if (!$admin) {
             require('view/frontend/adminloginView.php');
         } else {
@@ -98,33 +93,29 @@ class BackController {
     }
 
     //Effacer un commentaire
-    function deleteComment()
+    public function deleteComment()
     {
-        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-        $commentdelete = $commentManager->deleteComment($_GET['id']);
+        $commentdelete = $this->commentManager->deleteComment($_GET['id']);
         header("location:index.php?action=tables");
     }
 
     //Signaler un commentaire
-    function warningComment()
+    public function warningComment()
     {
-        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-        $warncomment = $commentManager->warningComment($_GET['id']);
+        $warncomment = $this->commentManager->warningComment($_GET['id']);
         header('Location: index.php?action=post&id=' . $_GET['postId']);
     }
 
     //Désignaler un commentaire
-    function unwarningComment()
+    public function unwarningComment()
     {
-        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-        $warncomment = $commentManager->unwarningComment($_GET['id']);
+        $warncomment = $this->commentManager->unwarningComment($_GET['id']);
         header("location:index.php?action=tables");
     }
 
-    function updatePost($title, $content, $id)
+    public function updatePost($title, $content, $id)
     {
-        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $postUpdate = $postManager->updatePost($title, $content, $id);
+        $postUpdate = $this->postManager->updatePost($title, $content, $id);
         header("location:index.php?action=listingpost");
     }
 
