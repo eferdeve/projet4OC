@@ -17,6 +17,12 @@ class BackController {
     
     }
 
+    //Page 404 not found
+    public function notFound()
+    {
+        require('view/backend/sbadmin2/404.php');
+    }
+
     //Envoie d'un nouveau post
     public function sendpost($title, $content)
     {
