@@ -120,6 +120,7 @@ class BackController {
         header("location:index.php?action=tables");
     }
 
+    //Modifier un post
     public function updatePost($title, $content, $id)
     {
         $postUpdate = $this->postManager->updatePost($title, $content, $id);

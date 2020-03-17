@@ -89,7 +89,6 @@
            </div>
 
         </div>
-        <!-- /.container-fluid -->
 
         </div>
         <?php $content = ob_get_clean(); ?>

@@ -29,6 +29,7 @@ class PostManager extends Manager
         $req->execute(array($title, $content));
     }
 
+    //Obtenir les posts par ordre de date de creation
     public function getPosts()
     {
         $db = $this->dbConnect();
@@ -38,6 +39,7 @@ class PostManager extends Manager
         return $posts;
     }
 
+    //Obtenir les posts en fonction de l'id de l'URL
     public function getPost($postId)
     {
         $db = $this->dbConnect();
@@ -48,11 +50,13 @@ class PostManager extends Manager
         return $post;
     }
 
+    //Nombre total de posts
     public function counterPosts()
     {
         $db = $this->dbConnect();
         $postscount = $db->query("SELECT COUNT(id) AS counterposts FROM posts");
         $myvar = $postscount->fetch();
+
         return $myvar;
     }
 }

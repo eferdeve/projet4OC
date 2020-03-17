@@ -11,23 +11,27 @@ class FrontController {
         $this->postManager = new \OpenClassrooms\Blog\Model\PostManager();
     }
 
+    //Afficher la vue du login
     function adminLogin()
     {
         require('view/frontend/adminLoginView.php');
     }
 
+    //Afficher les posts dans la homepage
     function homepage()
     {
         $posts = array_reverse($this->postManager->getPosts()); 
         require('view/frontend/homepageView.php'); 
     }
 
+    //Afficher les posts 
     function listPosts()
     {
         $posts = $this->postManager->getPosts();                         
         require('view/frontend/listPostsView.php');                 
     }
 
+    //Afficher un post en fonction de l'id dans l'URL
     function post()
     {
         $post = $this->postManager->getPost($_GET['id']);
@@ -36,6 +40,7 @@ class FrontController {
         require('view/frontend/postView.php');
     }
 
+    //Ajouter un commentaire en BDD et le lié au post en question
     function addComment($postId, $author, $comment)
     {
         $affectedLines = $this->commentManager->postComment($postId, $author, $comment);

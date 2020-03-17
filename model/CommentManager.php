@@ -6,6 +6,7 @@ require_once("model/Manager.php");
 
 class CommentManager extends Manager
 {
+    //Obtenir tout les commentaires par ordre décroissante de date de création
     public function getAllComments()
     {
         $db = $this->dbConnect();
@@ -15,6 +16,7 @@ class CommentManager extends Manager
         return $myvar;
     }
 
+    //Obtenir les commentaires en fonction de leur id
     public function getComments($postId)
     {
         $db = $this->dbConnect();
@@ -24,6 +26,7 @@ class CommentManager extends Manager
         return $comments;
     }
 
+    //Ajouter un commentaire en BDD
     public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
@@ -33,24 +36,28 @@ class CommentManager extends Manager
         return $affectedLines;
     }
 
+    //Effacer un commentaire en BDD
     public function deleteComment($id)
     {
         $db = $this->dbConnect();
         $commentTarget = $db->query("DELETE FROM comments WHERE id=$id");
     }
 
+    //Signaler un commentaire en BDD
     public function warningComment($id)
     {
         $db = $this->dbConnect();
         $commentTarget = $db->query("UPDATE comments SET signalement = 'Oui' WHERE id=$id");
     }
 
+    //Enlever le signalement d'un commentaire
     public function unwarningComment($id)
     {
         $db = $this->dbConnect();
         $commentTarget = $db->query("UPDATE comments SET signalement = 'Non' WHERE id=$id");
     }
 
+    //Obtenir le nombre total de commentaires
     public function counterComment()
     {
         $db = $this->dbConnect();
@@ -59,6 +66,7 @@ class CommentManager extends Manager
         return $myvar;
     }
 
+    //Obtenir le nombre total de commentaires signalés
     public function warnCounterComment()
     {
         $db = $this->dbConnect();
