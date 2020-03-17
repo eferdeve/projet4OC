@@ -13,6 +13,7 @@ class BackController {
         $this->logs = new \OpenClassrooms\Blog\Model\Login();
         $this->commentwarncount = $this->commentManager->warnCounterComment();
         $this->commentcount = $this->commentManager->counterComment();
+        $this->counterPosts = $this->postManager->counterPosts();
     
     }
 

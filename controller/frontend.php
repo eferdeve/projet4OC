@@ -5,6 +5,11 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 
 class FrontController {
+    public function __construct()
+    {
+        $this->commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+        $this->postManager = new \OpenClassrooms\Blog\Model\PostManager();
+    }
 
     function adminLogin()
     {
@@ -13,35 +18,27 @@ class FrontController {
 
     function homepage()
     {
-        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $posts = array_reverse($postManager->getPosts()); 
+        $posts = array_reverse($this->postManager->getPosts()); 
         require('view/frontend/homepageView.php'); 
     }
 
     function listPosts()
     {
-        $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
-        $posts = $postManager->getPosts();                         
-    
+        $posts = $this->postManager->getPosts();                         
         require('view/frontend/listPostsView.php');                 
     }
 
     function post()
     {
-        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-
-        $post = $postManager->getPost($_GET['id']);
-        $comments = $commentManager->getComments($_GET['id']);
+        $post = $this->postManager->getPost($_GET['id']);
+        $comments = $this->commentManager->getComments($_GET['id']);
 
         require('view/frontend/postView.php');
     }
 
     function addComment($postId, $author, $comment)
     {
-        $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-
-        $affectedLines = $commentManager->postComment($postId, $author, $comment);
+        $affectedLines = $this->commentManager->postComment($postId, $author, $comment);
 
         if ($affectedLines === false) {
             throw new Exception('Impossible d\'ajouter le commentaire !');

@@ -47,4 +47,12 @@ class PostManager extends Manager
 
         return $post;
     }
+
+    public function counterPosts()
+    {
+        $db = $this->dbConnect();
+        $postscount = $db->query("SELECT COUNT(id) AS counterposts FROM posts");
+        $myvar = $postscount->fetch();
+        return $myvar;
+    }
 }
