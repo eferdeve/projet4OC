@@ -13,6 +13,8 @@
   <link href="vendorsFront/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
   <!-- Fonts -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
   <link href="vendorsFront/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="vendorsFront/css/animate.css" rel="stylesheet" />
   <!-- Squad theme CSS -->
@@ -48,9 +50,9 @@
           <li><a href="#contact">Contact</a></li>
 
           <?php if (!$_SESSION['admin']): ?>
-            <li><a href="index.php?action=login">Connexion</a></li> 
+            <li><a href="index.php?action=login"><i class="fas fa-sign-in-alt"></i> Connexion</a></li> 
           <?php else :?>
-            <li><a href="index.php?action=sessionActive">Tableau de bord (connecté)</a></li> 
+            <li><a href="index.php?action=sessionActive"><i class="fas fa-sign-in-alt"></i> Tableau de bord (connecté)</a></li> 
           <?php endif; ?>
           
         </ul>

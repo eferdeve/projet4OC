@@ -23,17 +23,14 @@
     <div class="row">
         <div class="col-md-12">
             <div class="wow bounceInUp animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;">
-                <div class="team boxed-grey">
+                <div class="team boxed-grey text-center bg-gray">
                     <div class="inner">
                         <?php for ($i = 0; $i < count($posts); $i++): ?>
                             <h3>
-                                <?= htmlspecialchars($posts[$i]['title']) ?>
+                                <a href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>"><?= htmlspecialchars($posts[$i]['title']) ?></a>
                             </h3>
-                            <h5>
-                                <em>publié le <?= $posts[$i]['creation_date_fr'] ?></em>
-                            </h5>
                             <p>
-                                <em><a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>">Lire ce chapitre</a></em>
+                                <em>publié le <?= $posts[$i]['creation_date_fr'] ?></em>
                             </p>
                         <?php endfor; ?>
                     </div>
