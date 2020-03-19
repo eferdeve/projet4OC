@@ -45,7 +45,7 @@
         <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Accueil</a></li>
           <li><a href="index.php#about">Biographie</a></li>
-          <li><a href="index.php#service">Dernières publications</a></li>
+          <li><a href="index.php#service">Commencer le roman</a></li>
           <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>
           <li><a href="index.php#contact">Contact</a></li>
 

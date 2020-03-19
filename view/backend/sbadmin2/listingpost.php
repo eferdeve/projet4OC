@@ -5,7 +5,7 @@
 <h1>Vos chapitres</h1>
 
 <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Voici la liste complète des chapitres que vous avez écris</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Voici la liste complète des chapitres que vous avez écris du plus récent au plus ancien</h6>
 </div>
 
 <div class="card-body">

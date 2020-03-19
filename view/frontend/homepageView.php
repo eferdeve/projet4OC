@@ -43,7 +43,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#index.php">Accueil</a></li>
           <li><a href="#about">Biographie</a></li>
-          <li><a href="#service">Dernières publications</a></li>
+          <li><a href="#service">Commencer le roman</a></li>
           <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>
           <li><a href="#contact">Contact</a></li>
 
@@ -111,7 +111,7 @@
           <div class="col-lg-8 col-lg-offset-2">
             <div class="wow bounceInDown" data-wow-delay="0.4s">
               <div class="section-heading">
-                <h2>Dernières publications</h2>
+                <h2>Commencer le roman</h2>
             
                 <i class="fa fa-2x fa-angle-down"></i>
                 <?php for ($i = 0; $i < 3; $i++): ?>

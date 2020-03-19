@@ -46,13 +46,6 @@
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="mdp" name="mdp" placeholder="Mot de pass">
                     </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Se souvenir de moi</label>
-                      </div>
-                    </div>
-
                     <button type="submit" name="valider" class="btn btn-primary btn-user btn-block">Se connecter</button>
                     <hr>
                   </form>
