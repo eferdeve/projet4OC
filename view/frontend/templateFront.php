@@ -44,7 +44,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
         <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Accueil</a></li>
+        <li class="active"><a href="index.php"><i class="fas fa-home"></i> Accueil</a></li>
           <li><a href="index.php#about">Biographie</a></li>
           <li><a href="index.php#service">Commencer le roman</a></li>
           <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>
@@ -53,7 +53,7 @@
           <?php if (!$_SESSION['admin']): ?>
             <li><a href="index.php?action=login"><i class="fas fa-sign-in-alt"></i> Connexion</a></li> 
           <?php else :?>
-            <li><a href="index.php?action=sessionActive"><i class="fas fa-sign-in-alt"> Tableau de bord (connecté)</a></li> 
+            <li><a href="index.php?action=sessionActive"><i class="fas fa-sign-in-alt"></i> Tableau de bord (connecté)</a></li> 
           <?php endif; ?>
 
         </ul>

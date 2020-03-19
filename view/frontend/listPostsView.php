@@ -27,7 +27,7 @@
                     <div class="inner">
                         <?php for ($i = 0; $i < count($posts); $i++): ?>
                             <h3>
-                                <a href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>"><?= htmlspecialchars($posts[$i]['title']) ?></a>
+                                <a href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>"><i class="fas fa-location-arrow"></i>  <?= htmlspecialchars($posts[$i]['title']) ?></a>
                             </h3>
                             <p>
                                 <em>publié le <?= $posts[$i]['creation_date_fr'] ?></em>

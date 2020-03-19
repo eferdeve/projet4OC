@@ -43,7 +43,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#index.php">Accueil</a></li>
+          <li class="active"><a href="#index.php"><i class="fas fa-home"></i> Accueil</a></li>
           <li><a href="#about">Biographie</a></li>
           <li><a href="#service">Commencer le roman</a></li>
           <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>
