@@ -83,7 +83,7 @@
   <section id="pagecontent">
 
   <div class="container">
-     <div class="position-sticky"><button type="button" id="night" class="btn btn-light">Passer en Mode nuit</button></div>
+     <button type="button" id="night" class="btn btn-light">Passer en Mode nuit</button>
      <button type="button" id="light" class="btn btn-light">Passer en Mode jour</button>
   </div>
   
