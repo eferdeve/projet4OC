@@ -57,7 +57,7 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                              Ce commentaire sera supprimé et n'apparaitre plus sur le site
+                              Ce commentaire sera supprimé et n'apparaitra plus sur le site
                            </div>
                            <div class="modal-footer">
                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
