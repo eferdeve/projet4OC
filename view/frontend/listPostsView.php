@@ -30,7 +30,7 @@
                                 <?= htmlspecialchars($posts[$i]['title']) ?>
                             </h3>
                             <h5>
-                                <em>Date de publication <?= $posts[$i]['creation_date_fr'] ?></em>
+                                <em>publié le <?= $posts[$i]['creation_date_fr'] ?></em>
                             </h5>
                             <p>
                                 <em><a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>">Lire ce chapitre</a></em>

@@ -107,41 +107,33 @@
 
     <div class="heading-about">
       <div class="container">
-        <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
             <div class="wow bounceInDown" data-wow-delay="0.4s">
               <div class="section-heading">
                 <h2>Commencer le roman</h2>
-            
-                <i class="fa fa-2x fa-angle-down"></i>
+              </div>
+                
                 <?php for ($i = 0; $i < 3; $i++): ?>
-                  <div>
+                  <div class="row">
+                  <i class="fa fa-2x fa-angle-down"></i>
+
                       <h3>
-                          <?= htmlspecialchars($posts[$i]['title']) ?>
-                          <em>le <?= $posts[$i]['creation_date_fr'] ?></em>
+                        <a href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>"><?= htmlspecialchars($posts[$i]['title']) ?> </a>
+                        <p>rédigé le <?= $posts[$i]['creation_date_fr'] ?> </p>
                       </h3>
         
                       <p>
-                          <?= nl2br($posts[$i]['content']) ?>
-                          <br />
-                          <em><a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $posts[$i]['id'] ?>">Lire ce chapitre</a></em>
+                          <?= substr(nl2br($posts[$i]['content']), 0, 200) ?>
                       </p>
                   </div>
                   <?php endfor; ?>
                 
-              </div>
-            </div>
+              
           </div>
         </div>
       </div>
     </div>
-    <div class="wow bounceInDown" data-wow-delay="0.8s">
-      <div class="col-lg-8 col-lg-offset-2">
-
-      
-
-      </div>
-    </div>
+    
   </section>
   <!-- /Section: dernière publication -->
 
