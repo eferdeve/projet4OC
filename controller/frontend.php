@@ -35,9 +35,12 @@ class FrontController {
     function post()
     {
         $post = $this->postManager->getPost($_GET['id']);
-        $comments = $this->commentManager->getComments($_GET['id']);
-
-        require('view/frontend/postView.php');
+        if ($post == true) {
+            $comments = $this->commentManager->getComments($_GET['id']);
+            require('view/frontend/postView.php');
+        } else {
+            require('view/backend/sbadmin2/404.php');
+        }
     }
 
     //Ajouter un commentaire en BDD et le lié au post en question

@@ -10,7 +10,7 @@ class CommentManager extends Manager
     public function getAllComments()
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT * FROM comments ORDER BY comment_date DESC');
+        $comments = $db->prepare('SELECT * FROM comments ORDER BY signalement DESC');
         $comments->execute();
         $myvar = $comments->fetchAll();
         return $myvar;

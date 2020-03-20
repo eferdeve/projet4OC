@@ -143,14 +143,10 @@
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
-                <?php 
-                if ($this->commentwarncount['counterwarncom'] > 0) {
-                ?>
+                <?php if ($this->commentwarncount['counterwarncom'] > 0) : ?>
                 <span class="badge badge-danger badge-counter"><?= $this->commentwarncount['counterwarncom'] ?></span>
               </a>
-                <?php 
-                } 
-                ?>
+                <?php endif; ?>
               <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
@@ -275,6 +271,7 @@
   </div>
 
 
+  <script src="public/nightmode.js"></script>
   <script src="public/main.js"></script>
   <!-- Bootstrap core JavaScript-->
   <script src="vendors/vendor/jquery/jquery.min.js"></script>
@@ -286,12 +283,8 @@
   <!-- Custom scripts for all pages-->
   <script src="vendors/js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendors/vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="vendors/js/demo/chart-area-demo.js"></script>
-  <script src="vendors/js/demo/chart-pie-demo.js"></script>
+
 
 </body>
 

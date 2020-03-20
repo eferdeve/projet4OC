@@ -12,7 +12,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Voici la liste complète de tout les commentaires laissés par vos lecteur</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Voici la liste complète de tous les commentaires laissés par vos lecteurs</h6>
               </br>
               <h6 class="m-0 font-weight-bold text-primary">TOTAL = <?= $this->commentcount['countercom'] ?></h6>
               </br>
@@ -66,9 +66,9 @@
                          </div>
                        </div>
                       </div>
-                      
-                      <a href="index.php?action=unwarning&id=<?= $comments[$i]['id'] ?>" class="btn btn-success">Retirer le signalement</a>
-
+                      <?php if ($comments[$i]['signalement'] == "Oui") :?>
+                       <a href="index.php?action=unwarning&id=<?= $comments[$i]['id'] ?>" class="btn btn-success">Retirer le signalement</a>
+                      <?php endif;?>
                       </td>
                     </tr>
                       <?php
