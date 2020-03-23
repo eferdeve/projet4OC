@@ -30,8 +30,7 @@ try {
         if ($_GET['action'] == 'sendpost') {
             if (!empty($_POST['title']) && !empty($_POST['content'])) {
                 $back->sendpost($_POST['title'], $_POST['content']);
-            }
-            else {
+            } else {
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }
         }
@@ -83,7 +82,7 @@ try {
 
         //Affichage du loginhome une fois les logs corrects
         if ($_GET['action'] == 'login') {
-                $back->login();
+            $back->login();
         }
 
         //Affichage de la page de connexion administrateur
@@ -94,34 +93,26 @@ try {
         //Affichage de la liste des chapitres
         if ($_GET['action'] == 'listPosts') {
             $front->listPosts();
-        }
-        elseif ($_GET['action'] == 'post') {
+        } elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $front->post();
-            }
-            else {
+            } else {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
-        }
-        elseif ($_GET['action'] == 'addComment') {
+        } elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['author']) && !empty($_POST['comment'])) {
                     $front->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-                }
-                else {
+                } else {
                     throw new Exception('Tous les champs ne sont pas remplis !');
                 }
-            }
-            else {
+            } else {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
-    }
-    
-    else {
+    } else {
         $front->homepage();
     }
-}
-catch(Exception $e) {
+} catch (Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
 }

@@ -5,7 +5,8 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/login.php');
 
-class BackController {
+class BackController
+{
     public function __construct()
     {
         $this->commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
@@ -14,7 +15,6 @@ class BackController {
         $this->commentwarncount = $this->commentManager->warnCounterComment();
         $this->commentcount = $this->commentManager->counterComment();
         $this->counterPosts = $this->postManager->counterPosts();
-    
     }
 
     //Page 404 not found
@@ -29,8 +29,7 @@ class BackController {
         $reqPost = $this->postManager->newPost($title, $content);
         if ($reqPost === false) {
             throw new Exception('Impossible d\'ajouter le billet !');
-        }
-        else {
+        } else {
             header('Location: index.php?action=newpost');
         }
     }
@@ -49,11 +48,11 @@ class BackController {
     }
 
     //Effacer un post
-     public function deletePost()
-     {
+    public function deletePost()
+    {
         $deletePost = $this->postManager->deletePost($_GET['id']);
         header('Location: index.php?action=listingpost');
-     }
+    }
 
     //Affichage page modifier un post
     public function editPost()
@@ -95,7 +94,7 @@ class BackController {
         if (!$admin) {
             require('view/frontend/adminloginView.php');
         } else {
-            header("location:index.php?action=sessionActive"); 
+            header("location:index.php?action=sessionActive");
         }
     }
 
@@ -126,6 +125,4 @@ class BackController {
         $postUpdate = $this->postManager->updatePost($title, $content, $id);
         header("location:index.php?action=listingpost");
     }
-
 }
-

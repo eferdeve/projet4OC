@@ -10,10 +10,8 @@
   <title> <?= $title ?> </title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
   <!-- Bootstrap Core CSS -->
   <link href="vendorsFront/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
   <!-- Fonts -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="vendorsFront/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -21,7 +19,6 @@
   <!-- Squad theme CSS -->
   <link href="vendorsFront/css/style.css" rel="stylesheet">
   <link href="vendorsFront/color/default.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -34,8 +31,8 @@
     <div class="container">
       <div class="navbar-header page-scroll">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
+          <i class="fa fa-bars"></i>
+        </button>
         <a class="navbar-brand" href="index.php">
           <h1>JEAN FORTEROCHE</h1>
         </a>
@@ -44,18 +41,17 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
         <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php"><i class="fas fa-home"></i> Accueil</a></li>
+          <li class="active"><a href="index.php"><i class="fas fa-home"></i> Accueil</a></li>
           <li><a href="index.php#about">Biographie</a></li>
           <li><a href="index.php#service">Commencer le roman</a></li>
           <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>
           <li><a href="index.php#contact">Contact</a></li>
 
-          <?php if (!$_SESSION['admin']): ?>
-            <li><a href="index.php?action=login"><i class="fas fa-sign-in-alt"></i> Connexion</a></li> 
-          <?php else :?>
-            <li><a href="index.php?action=sessionActive"><i class="fas fa-sign-in-alt"></i> Tableau de bord (connecté)</a></li> 
+          <?php if (!$_SESSION['admin']) : ?>
+            <li><a href="index.php?action=login"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
+          <?php else : ?>
+            <li><a href="index.php?action=sessionActive"><i class="fas fa-sign-in-alt"></i> Tableau de bord (connecté)</a></li>
           <?php endif; ?>
-
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -65,41 +61,28 @@
 
   <!-- Section: intro -->
   <section id="intro" class="intro">
-
     <div class="slogan">
       <h2><?= $title ?></h2> <!-- title de la page en php -->
       <h4>COMMENCER MA LECTURE</h4>
     </div>
     <div class="page-scroll">
       <a href="#pagecontent" class="btn btn-circle">
-				<i class="fa fa-angle-double-down animated"></i>
-			</a>
+        <i class="fa fa-angle-double-down animated"></i>
+      </a>
     </div>
   </section>
-  <!-- /Section: intro -->
 
   <!-- Section: pagecontent -->
-
   <section id="pagecontent">
+    <div class="container">
+      <button type="button" id="night" class="btn btn-light">Passer en Mode nuit</button>
+      <button type="button" id="light" class="btn btn-light">Passer en Mode jour</button>
+    </div>
 
-  <div class="container">
-     <button type="button" id="night" class="btn btn-light">Passer en Mode nuit</button>
-     <button type="button" id="light" class="btn btn-light">Passer en Mode jour</button>
-  </div>
-  
-<!-- ob_get_start -->
-<?= $content ?>
-<!-- ob_get_ -->
-
-
-
-
-
-
+    <!-- ob_get_start -->
+    <?= $content ?>
+    <!-- ob_get_ -->
   </section>
-
-  <!-- /Section: pagecontent -->
-
 
   <footer>
     <div class="container">
@@ -108,8 +91,8 @@
           <div class="wow shake" data-wow-delay="0.4s">
             <div class="page-scroll marginbot-30">
               <a href="#intro" id="totop" class="btn btn-circle">
-							<i class="fa fa-angle-double-up animated"></i>
-						</a>
+                <i class="fa fa-angle-double-up animated"></i>
+              </a>
             </div>
           </div>
           <p>&copy;Jean Forteroche. Tout droits réservés.</p>
@@ -133,7 +116,7 @@
   <!-- Custom Theme JavaScript -->
   <script src="vendorsFront/js/custom.js"></script>
   <script src="vendorsFront/contactform/contactform.js"></script>
-  
+
 
 </body>
 

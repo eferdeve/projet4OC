@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>Espace administrateur</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendors/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,7 +33,7 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-            
+
               <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">

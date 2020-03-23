@@ -19,12 +19,11 @@ class NightMode {
     }
 
     Light() {
-        $('#pagecontent').css('background-color', 'white');  
-        $('#light').css('font-color', 'white'); 
+        $('#pagecontent').css('background-color', 'white');
+        $('#light').css('font-color', 'white');
         $('#light').hide()
         $('#night').show();
         $('.boxed-grey').css('background', '#f9f9f9');
         $('p').css('color', '#666');
     }
-    
 }

@@ -4,7 +4,8 @@
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 
-class FrontController {
+class FrontController
+{
     public function __construct()
     {
         $this->commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
@@ -20,15 +21,15 @@ class FrontController {
     //Afficher les posts dans la homepage
     function homepage()
     {
-        $posts = array_reverse($this->postManager->getPosts()); 
-        require('view/frontend/homepageView.php'); 
+        $posts = array_reverse($this->postManager->getPosts());
+        require('view/frontend/homepageView.php');
     }
 
     //Afficher les posts 
     function listPosts()
     {
-        $posts = $this->postManager->getPosts();                         
-        require('view/frontend/listPostsView.php');                 
+        $posts = $this->postManager->getPosts();
+        require('view/frontend/listPostsView.php');
     }
 
     //Afficher un post en fonction de l'id dans l'URL
@@ -50,8 +51,7 @@ class FrontController {
 
         if ($affectedLines === false) {
             throw new Exception('Impossible d\'ajouter le commentaire !');
-        }
-        else {
+        } else {
             header('Location: index.php?action=post&id=' . $postId);
         }
     }

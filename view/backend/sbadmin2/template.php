@@ -11,14 +11,11 @@
   <script src="https://cdn.tiny.cloud/1/o3c2sxpgjnq497a5mc1nl1iydwqt21798wglujodui2g2zsr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  
-
   <title><?= $title ?></title>
 
   <!-- Custom fonts for this template-->
   <link href="vendors/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
   <!-- Custom styles for this template-->
   <link href="vendors/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -66,8 +63,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="./index.php?action=newpost"><i class="fas fa-pen-fancy"></i>  Nouveau chapitre</a> 
-            <a class="collapse-item" href="./index.php?action=listingpost"><i class="fas fa-user-edit"></i>  Modifier chapitres</a>
+            <a class="collapse-item" href="./index.php?action=newpost"><i class="fas fa-pen-fancy"></i> Nouveau chapitre</a>
+            <a class="collapse-item" href="./index.php?action=listingpost"><i class="fas fa-user-edit"></i> Modifier chapitres</a>
           </div>
         </div>
       </li>
@@ -89,8 +86,8 @@
       <hr class="sidebar-divider">
 
       <!-- Heading -->
-      
-      
+
+
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -144,17 +141,17 @@
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <?php if ($this->commentwarncount['counterwarncom'] > 0) : ?>
-                <span class="badge badge-danger badge-counter"><?= $this->commentwarncount['counterwarncom'] ?></span>
+                  <span class="badge badge-danger badge-counter"><?= $this->commentwarncount['counterwarncom'] ?></span>
               </a>
-                <?php endif; ?>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Notifications
-                </h6>
-                <?php 
-                if ($this->commentwarncount['counterwarncom'] > 0) {
-                ?>
+            <?php endif; ?>
+            <!-- Dropdown - Alerts -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+              <h6 class="dropdown-header">
+                Notifications
+              </h6>
+              <?php
+              if ($this->commentwarncount['counterwarncom'] > 0) {
+              ?>
                 <a class="dropdown-item d-flex align-items-center" href="index.php?action=tables">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
@@ -165,21 +162,21 @@
                     <span class="font-weight-bold">Vous avez des commentaires en attente de modération !</span>
                   </div>
                 </a>
-                <?php
-                } else {
-                ?>
+              <?php
+              } else {
+              ?>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
- 
+
                   </div>
                   <div>
                     Vous n'avez aucune notifications !
                   </div>
                 </a>
-                <?php 
-                  } 
-                ?>
-              </div>
+              <?php
+              }
+              ?>
+            </div>
             </li>
 
             <div class="topbar-divider d-none d-sm-block"></div>
@@ -208,18 +205,9 @@
           </ul>
 
         </nav>
-      <!-- End of Topbar -->
+        <!-- End of Topbar -->
 
-      <!-- Begin Page Content -->
-        
-
-
-
-
-
-
-
-      <?= $content ?>
+        <!-- Begin Page Content -->
 
 
 
@@ -228,64 +216,68 @@
 
 
 
-      <!-- End of Main Content -->
+        <?= $content ?>
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>© 2020 - Tout droits réservés / Site étudiant par Enzo Ferres</span>
+
+
+
+
+
+
+
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>© 2020 - Tout droits réservés / Site étudiant par Enzo Ferres</span>
+            </div>
           </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+        </footer>
+        <!-- End of Footer -->
+
+      </div>
+      <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Déconnexion</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Cliquez sur "Se déconnecter" mettra fin à la session et vous déconnectera de votre espace admin.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
-          <a class="btn btn-primary" href="index.php?action=logout">Se déconnecter</a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Déconnexion</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Cliquez sur "Se déconnecter" mettra fin à la session et vous déconnectera de votre espace admin.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+            <a class="btn btn-primary" href="index.php?action=logout">Se déconnecter</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 
-  <script src="public/nightmode.js"></script>
-  <script src="public/main.js"></script>
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendors/vendor/jquery/jquery.min.js"></script>
-  <script src="vendors/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="public/nightmode.js"></script>
+    <script src="public/main.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendors/vendor/jquery/jquery.min.js"></script>
+    <script src="vendors/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendors/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendors/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="vendors/js/sb-admin-2.min.js"></script>
-
-
-
-
+    <!-- Custom scripts for all pages-->
+    <script src="vendors/js/sb-admin-2.min.js"></script>
 </body>
-
 </html>
