@@ -42,8 +42,8 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#index.php"><i class="fas fa-home"></i> Accueil</a></li>
           <li><a href="#about">Biographie</a></li>
-          <li><a href="#service">Commencer le roman</a></li>
-          <li class="active"><a href="index.php?action=listPosts">Chapitres</a></li>
+          <li><a href="#service"><i class="fas fa-book-reader"></i> Commencer le roman</a></li>
+          <li class="active"><a href="index.php?action=listPosts"><i class="fas fa-bookmark"></i> Chapitres</a></li>
           <li><a href="#contact">Contact</a></li>
 
           <?php if (!$_SESSION['admin']) : ?>
