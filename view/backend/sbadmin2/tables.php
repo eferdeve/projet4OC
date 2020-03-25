@@ -41,7 +41,7 @@
                 <td><?= date('H:i:s d/m/Y', strtotime($comments[$i]['comment_date'])) ?></td>
                 <td><?= htmlspecialchars($comments[$i]['signalement']) ?></td>
                 <td>
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?= $comments[$i]['id'] ?>">
+                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $comments[$i]['id'] ?>">
                     Supprimer le commentaire
                   </button>
 
@@ -66,7 +66,7 @@
                     </div>
                   </div>
                   <?php if ($comments[$i]['signalement'] == "Oui") : ?>
-                    <a href="index.php?action=unwarning&id=<?= $comments[$i]['id'] ?>" class="btn btn-success">Retirer le signalement</a>
+                    <a href="index.php?action=unwarning&id=<?= $comments[$i]['id'] ?>" class="btn btn-success btn-sm">Retirer le signalement</a>
                   <?php endif; ?>
                 </td>
               </tr>

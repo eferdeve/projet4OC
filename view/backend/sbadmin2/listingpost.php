@@ -27,9 +27,9 @@
             <td><?= $posts[$i]['title'] ?></td>
             <td><?= substr(nl2br($posts[$i]['content']), 0, 100) ?> [...]</td>
             <td><?= $posts[$i]['creation_date_fr'] ?></td>
-            <td><a href="index.php?action=editpost&id=<?= $posts[$i]['id'] ?>" class="btn btn-warning">Modifier</a>
+            <td><a href="index.php?action=editpost&id=<?= $posts[$i]['id'] ?>" class="btn btn-warning btn-sm">Modifier</a>
 
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletepost<?= $posts[$i]['id'] ?>">
+              <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deletepost<?= $posts[$i]['id'] ?>">
                 Supprimer le chapitre
               </button>
 
