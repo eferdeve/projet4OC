@@ -11,9 +11,7 @@
                             <h2><?= htmlspecialchars($post['title']) ?></h2>
                             <p><a href="index.php">Retour à l'accueil</a></p>
                             <p>
-                                <a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $post['id'] - 1 ?>">
-                                    <- Chapitre précédent</a> <a class="btn btn-primary" role="button" href="index.php?action=post&amp;id=<?= $post['id'] + 1 ?>">Chapitre suivant ->
-                                </a>
+                                <a class="btn btn-primary" role="button" href="index.php?action=listPosts">Retour aux chapitres</a> 
                             </p>
                             <i class="fa fa-2x fa-angle-down"></i>
                         </div>

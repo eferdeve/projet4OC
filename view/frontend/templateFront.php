@@ -62,7 +62,7 @@
   <!-- Section: intro -->
   <section id="intro" class="intro">
     <div class="slogan">
-      <h2><?= $title ?></h2> <!-- title de la page en php -->
+      <h2><i class="fas fa-bookmark"></i> <?= $title ?></h2> <!-- title de la page en php -->
       <h4>COMMENCER MA LECTURE</h4>
     </div>
     <div class="page-scroll">
