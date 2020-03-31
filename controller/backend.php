@@ -9,18 +9,16 @@ class BackController
 {
     public function __construct()
     {
-        $this->commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-        $this->postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $this->logs = new \OpenClassrooms\Blog\Model\Login();
-        $this->commentwarncount = $this->commentManager->warnCounterComment();
-        $this->commentcount = $this->commentManager->counterComment();
-        $this->counterPosts = $this->postManager->counterPosts();
-    }
-
-    //Page 404 not found
-    public function notFound()
-    {
-        require('view/backend/sbadmin2/404.php');
+        if (!$_SESSION['admin']) {
+            header('Location:index.php?action=notfound');
+        } else {
+            $this->commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+            $this->postManager = new \OpenClassrooms\Blog\Model\PostManager();
+            $this->logs = new \OpenClassrooms\Blog\Model\Login();
+            $this->commentwarncount = $this->commentManager->warnCounterComment();
+            $this->commentcount = $this->commentManager->counterComment();
+            $this->counterPosts = $this->postManager->counterPosts();
+        }
     }
 
     //Envoie d'un nouveau post
@@ -79,23 +77,9 @@ class BackController
     //Affichage homepage quand on est connecté
     public function adminHomepage()
     {
-        if ($_SESSION['admin']) {
-            $posts = $this->postManager->getPosts();
-            require('view/backend/sbadmin2/dashboard.php');
-        } else {
-            header('location:index.php');
-        }
-    }
-
-    //Affichage de la homepage login
-    public function login()
-    {
-        $admin = $this->logs->log($_POST['identifiant'], $_POST['mdp']);
-        if (!$admin) {
-            require('view/frontend/adminloginView.php');
-        } else {
-            header("location:index.php?action=sessionActive");
-        }
+        $posts = $this->postManager->getPosts();
+        require('view/backend/sbadmin2/dashboard.php');
+        header('location:index.php');
     }
 
     //Effacer un commentaire
@@ -103,13 +87,6 @@ class BackController
     {
         $commentdelete = $this->commentManager->deleteComment($_GET['id']);
         header("location:index.php?action=tables");
-    }
-
-    //Signaler un commentaire
-    public function warningComment()
-    {
-        $warncomment = $this->commentManager->warningComment($_GET['id']);
-        header('Location: index.php?action=post&id=' . $_GET['postId']);
     }
 
     //Désignaler un commentaire

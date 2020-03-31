@@ -40,28 +40,32 @@ class CommentManager extends Manager
     public function deleteComment($id)
     {
         $db = $this->dbConnect();
-        $commentTarget = $db->query("DELETE FROM comments WHERE id=$id");
+        $commentTarget = $db->prepare("DELETE FROM comments WHERE id=?");
+        $commentTarget->execute(array($id));
     }
 
     //Signaler un commentaire en BDD
     public function warningComment($id)
     {
         $db = $this->dbConnect();
-        $commentTarget = $db->query("UPDATE comments SET signalement = 'Oui' WHERE id=$id");
+        $commentTarget = $db->prepare("UPDATE comments SET signalement = 'Oui' WHERE id=?");
+        $commentTarget->execute(array($id));
     }
 
     //Enlever le signalement d'un commentaire
     public function unwarningComment($id)
     {
         $db = $this->dbConnect();
-        $commentTarget = $db->query("UPDATE comments SET signalement = 'Non' WHERE id=$id");
+        $commentTarget = $db->prepare("UPDATE comments SET signalement = 'Non' WHERE id=?");
+        $commentTarget->execute(array($id));
     }
 
     //Obtenir le nombre total de commentaires
     public function counterComment()
     {
         $db = $this->dbConnect();
-        $commentcount = $db->query("SELECT COUNT(id) AS countercom FROM comments");
+        $commentcount = $db->prepare("SELECT COUNT(id) AS countercom FROM comments");
+        $commentcount->execute();
         $myvar = $commentcount->fetch();
         return $myvar;
     }
@@ -70,7 +74,8 @@ class CommentManager extends Manager
     public function warnCounterComment()
     {
         $db = $this->dbConnect();
-        $commentwarncount = $db->query("SELECT COUNT(id) AS counterwarncom FROM comments WHERE signalement='Oui'");
+        $commentwarncount = $db->prepare("SELECT COUNT(id) AS counterwarncom FROM comments WHERE signalement='Oui'");
+        $commentwarncount->execute();
         $myvar = $commentwarncount->fetch();
         return $myvar;
     }

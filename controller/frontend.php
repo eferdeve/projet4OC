@@ -18,6 +18,13 @@ class FrontController
         require('view/frontend/adminLoginView.php');
     }
 
+    //Signaler un commentaire
+    public function warningComment()
+    {
+        $warncomment = $this->commentManager->warningComment($_GET['id']);
+        header('Location: index.php?action=post&id=' . $_GET['postId']);
+    }
+
     //Afficher les posts dans la homepage
     function homepage()
     {

@@ -44,7 +44,7 @@
                       <input type="text" class="form-control form-control-user" name="identifiant" id="identifiant" placeholder="Identifiant">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="mdp" name="mdp" placeholder="Mot de pass">
+                      <input type="password" class="form-control form-control-user" id="mdp" name="mdp" placeholder="Mot de passe">
                     </div>
                     <button type="submit" name="valider" class="btn btn-primary btn-user btn-block">Se connecter</button>
                     <hr>

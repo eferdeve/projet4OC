@@ -18,7 +18,8 @@ class PostManager extends Manager
     public function deletePost($postId)
     {
         $db = $this->dbConnect();
-        $req = $db->query("DELETE FROM posts WHERE id=$postId");
+        $req = $db->prepare("DELETE FROM posts WHERE id=?");
+        $req->execute(array($postId));
     }
 
     //Envoie d'un nouveau post
@@ -33,7 +34,8 @@ class PostManager extends Manager
     public function getPosts()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
+        $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
+        $req->execute();
         $posts = $req->fetchAll();
 
         return $posts;
@@ -54,7 +56,8 @@ class PostManager extends Manager
     public function counterPosts()
     {
         $db = $this->dbConnect();
-        $postscount = $db->query("SELECT COUNT(id) AS counterposts FROM posts");
+        $postscount = $db->prepare("SELECT COUNT(id) AS counterposts FROM posts");
+        $postscount->execute();
         $myvar = $postscount->fetch();
 
         return $myvar;
