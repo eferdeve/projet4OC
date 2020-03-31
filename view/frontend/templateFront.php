@@ -75,8 +75,8 @@
   <!-- Section: pagecontent -->
   <section id="pagecontent">
     <div class="container">
-      <button type="button" id="night" class="btn btn-light">Passer en Mode nuit</button>
-      <button type="button" id="light" class="btn btn-light">Passer en Mode jour</button>
+      <button type="button" id="night" class="btn btn-light">Passer en Mode nuit <i class="fas fa-moon"></i></button>
+      <button type="button" id="light" class="btn btn-light">Passer en Mode jour <i class="far fa-sun"></i></button>
     </div>
 
     <!-- ob_get_start -->
